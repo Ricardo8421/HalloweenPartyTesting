@@ -42,7 +42,7 @@ public class HalloweenPartyTest {
         Assert.assertFalse(driver.findElement(By.id("popup-widget5912")).isDisplayed());
     }
 
-    @Test(dataProvider = "popUpClose")
+    @Test(dependsOnMethods = {"testPopUpClose"})
     public void testCreateAccount(){
         WebElement joinUsButton = driver.findElement(By.id("bs-2"));
 
