@@ -1,7 +1,5 @@
 package party;
 
-import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchSessionException;
 import org.openqa.selenium.WebDriver;
