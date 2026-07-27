@@ -4,7 +4,8 @@
     <test name="Test Suite">
         <classes> 
             <class name="party.HalloweenPartyTest"/>
-             <class name="party.CreateAccountTest"/>
+            <class name="party.ContactUsTest"/>
+            <!-- <class name="party.CreateAccountTest"/> -->
         </classes>
     </test>
 </suite>
