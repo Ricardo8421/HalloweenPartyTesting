@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Suite">
+    <test name="Test Suite">
+        <classes> 
+            <class name="party.HalloweenPartyTest"/>
+             <class name="party.CreateAccountTest"/>
+        </classes>
+    </test>
+</suite>
