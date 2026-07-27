@@ -24,7 +24,7 @@ public class TwoFactorAuthentiationTest {
         wait = new WebDriverWait(driver, Duration.ofSeconds(3));
         
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(":2.container"));
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=':2.noAutoPopup']")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=':2.noAutoPopup']"))).click();
         driver.switchTo().parentFrame();
 
 

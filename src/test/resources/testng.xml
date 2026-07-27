@@ -5,9 +5,9 @@
         <classes> 
             <class name="party.HalloweenPartyTest"/>
             <class name="party.ContactUsTest"/>
-           <!-- <class name="party.CreateAccountTest"/>
+            <class name="party.CreateAccountTest"/>
             <class name="party.SignInTest"/>
-            <class name="party.TwoFactorAuthentiationTest"/> -->
+            <class name="party.TwoFactorAuthentiationTest"/>
         </classes>
     </test>
 </suite>
