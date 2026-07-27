@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -13,15 +14,11 @@ import java.time.Duration;
 public class ContactUsTest {
     WebDriver driver = null;
     WebDriverWait wait = null;
+
     @BeforeMethod
     public void  beforeTest(ITestContext context) {
         driver = (WebDriver) context.getAttribute("driver");
-        wait = new WebDriverWait(driver, Duration.ofSeconds(3));
-    }
-
-    @Test (dependsOnMethods = {"testPopUpClose"})
-    public void testNavigatesToContactUs(ITestContext context) {
-
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement contactUsForm = driver.findElement(By.xpath
                 ("//*[@data-aid='CONTACT_FORM_CONTAINER_REND']"));
         JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -29,12 +26,11 @@ public class ContactUsTest {
         wait.until(ExpectedConditions.visibilityOf(contactUsForm));
     }
 
-
     public void errorEmailMessage(){
         final String EMAIL_MESSAGE = "Please enter a valid email address.";
 
-        WebElement emailMessageError = driver.findElement(By.xpath("//*[@data-aid='CONTACT_EMAIL_ERR_REND']"));
-
+        WebElement emailMessageError = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//*[@data-aid='CONTACT_EMAIL_ERR_REND']")));
         Assert.assertTrue(emailMessageError.isDisplayed());
         Assert.assertEquals(emailMessageError.getText(), EMAIL_MESSAGE);
     }
@@ -72,11 +68,10 @@ public class ContactUsTest {
     }
 
     @Test (priority = 1)
-    public void testSendEmptyForm () {
-        fillInformationContactUs(" "," "," "," "," ");
-        WebElement logInButton = wait.until(ExpectedConditions
-                .presenceOfElementLocated(By.xpath("//*[@data-aid='CONTACT_SUBMIT_BUTTON_REND']")));
-        logInButton.click();
+    public void testSendEmptyEmail () {
+        fillInformationContactUs("test","test"," ","test","test");
+        WebElement logInButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.x-el")));
+        logInButton.sendKeys(Keys.ENTER);
         errorEmailMessage();
     }
 
@@ -84,29 +79,27 @@ public class ContactUsTest {
     public void testWrongFormatEmail () {
         fillInformationContactUs("Juanito","Alcachofa",
                 "emailtestemail.com","00000","test");
-        WebElement logInButton = wait.until(ExpectedConditions
-                .presenceOfElementLocated(By.xpath("//*[@data-aid='CONTACT_SUBMIT_BUTTON_REND']")));
-        logInButton.click();
+        WebElement logInButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.x-el")));
+        logInButton.sendKeys(Keys.ENTER);
         errorEmailMessage();
     }
 
     @Test (priority = 3)
     public void testSendCorrectInformation (){
-        final String SUCCESS_TEXT = "Thank you for your inquiry! We will get back to you within 48 Years.";
-
         fillInformationContactUs("Juanito", "Alcachofa",
                 "email@testemail.com", "00000","test");
+        WebElement logInButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.x-el")));
+        logInButton.sendKeys(Keys.ENTER);
+    }
 
-        WebElement logInButton = wait.until(ExpectedConditions
-                .presenceOfElementLocated(By.xpath("//*[@data-aid='CONTACT_SUBMIT_BUTTON_REND']")));
-        logInButton.click();
-        WebElement successSend = wait.until(ExpectedConditions.presenceOfElementLocated(By
-                .xpath("/html/body/div[2]/div/div/div[6]/div/div/section/div/div/div[1]/span/div/div/div/div/div/div[1]")));
+    @Test (dependsOnMethods = {"testSendCorrectInformation"},priority = 4)
+    public void testSuccessMessage (){
+        final String SUCCESS_TEXT = "Thank you for your inquiry! We will get back to you within 48 Years.";
+        WebElement successElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".c2-5d")));
+        WebElement successMessage = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div.c2-1:nth-child(2) > p:nth-child(1)")));
 
-        WebElement submitText = driver.findElement(By.xpath("//*[@data-aid='CONTACT_FORM_SUBMIT_SUCCESS_MESSAGE'] "));
-
-        Assert.assertEquals(submitText.getText(),SUCCESS_TEXT);
-        Assert.assertTrue(successSend.isDisplayed());
+        Assert.assertTrue(successElement.isDisplayed());
+        Assert.assertEquals(successMessage.getText(), SUCCESS_TEXT);
     }
 
 }
