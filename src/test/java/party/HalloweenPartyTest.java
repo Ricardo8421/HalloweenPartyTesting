@@ -44,7 +44,7 @@ public class HalloweenPartyTest {
     public void endTest(ITestContext context){
         driver = (WebDriver) context.getAttribute("driver");
         try{
-            driver.close();
+            // driver.close();
             driver.quit();
         }catch(NoSuchSessionException e){
             System.out.println("Ninguna sesión que cerrar");
