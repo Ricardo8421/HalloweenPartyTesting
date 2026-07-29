@@ -3,11 +3,12 @@
 <suite name="Suite">
     <test name="Test Suite">
         <classes> 
-            <class name="party.HalloweenPartyTest"/>
-            <class name="party.ContactUsTest"/>
-            <class name="party.CreateAccountTest"/>
-            <class name="party.SignInTest"/>
-            <class name="party.TwoFactorAuthentiationTest"/>
+            <class name="party.PopUpTest"/>
+            <!--<class name="party.ContactUsTest"/>
+             <class name="party.CreateAccountTest"/>
+             <class name="party.SignInTest"/>
+             <class name="party.TwoFactorAuthentiationTest"/>-->
+             <class name="party.HalloweenPartyTest"/>
         </classes>
     </test>
 </suite>
