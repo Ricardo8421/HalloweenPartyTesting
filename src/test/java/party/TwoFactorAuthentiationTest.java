@@ -101,35 +101,35 @@ public class TwoFactorAuthentiationTest {
 
     @Test
     public void testEmptyEmail(){
-        final String expectedErrorMessage = "Please enter a valid email address";
+        final String EXPECTED_ERROR_MESSAGE = "Please enter a valid email address";
 
         sendCode(null);
 
-        assertMessageWithString(expectedErrorMessage);
+        assertMessageWithString(EXPECTED_ERROR_MESSAGE);
     }
 
     @Test
     public void testIncorrectEmail(){
-        final String expectedErrorMessage = "Please enter a valid email address";
+        final String EXPECTED_ERROR_MESSAGE = "Please enter a valid email address";
 
         sendCode("Alcachofas y más S.A. de C.V.");
 
-        assertMessageWithString(expectedErrorMessage);
+        assertMessageWithString(EXPECTED_ERROR_MESSAGE);
     }
 
     @Test
     public void testEmptyCode(){
-        final String expectedErrorMessage = "Invalid code. Please try again.";
+        final String EXPECTED_ERROR_MESSAGE = "Invalid code. Please try again.";
 
         sendCode("alcachofas@comida.com");
         verifyCode(null);
 
-        assertMessageWithString(expectedErrorMessage);
+        assertMessageWithString(EXPECTED_ERROR_MESSAGE);
     }
 
     @Test
     public void testIncorrectCode(){
-        final String expectedErrorMessage = "Invalid code. Please try again.";
+        final String EXPECTED_ERROR_MESSAGE = "Invalid code. Please try again.";
         String testCode = "000000";
 
         sendCode("alcachofas@comida.com");
@@ -139,17 +139,17 @@ public class TwoFactorAuthentiationTest {
         }
         verifyCode(testCode);
 
-        assertMessageWithString(expectedErrorMessage);
+        assertMessageWithString(EXPECTED_ERROR_MESSAGE);
     }
 
     @Test
     public void test2FA(){
-        final String expectedVerificationMessage = "Verification successful!";
+        final String EXPECTED_ERROR_MESSAGE = "Verification successful!";
 
         sendCode("alcachofas@comida.com");
         String code = findCode();
         verifyCode(code);
 
-        assertMessageWithString(expectedVerificationMessage);
+        assertMessageWithString(EXPECTED_ERROR_MESSAGE);
     }
 }

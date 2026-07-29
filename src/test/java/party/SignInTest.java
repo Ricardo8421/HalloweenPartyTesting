@@ -48,57 +48,57 @@ public class SignInTest {
 
     @Test
     public void testEmptyEmail(){
-        final String expectedErrorMessage = "Enter a valid email address.";
+        final String EXPECTED_ERROR_MESSAGE = "Enter a valid email address.";
 
         sendSignInFormWithValues(null, "patataypatat0");
 
         WebElement emailErrorMessage = driver.findElement(By.xpath("//*[@data-aid='MEMBERSHIP_SSO_ERR_REND']"));
         Assert.assertTrue(emailErrorMessage.isDisplayed());
-        Assert.assertEquals(emailErrorMessage.getText(), expectedErrorMessage);
+        Assert.assertEquals(emailErrorMessage.getText(), EXPECTED_ERROR_MESSAGE);
     }
 
     @Test
     public void testIncorrectEmail(){
-        final String expectedErrorMessage = "Enter a valid email address.";
+        final String EXPECTED_ERROR_MESSAGE = "Enter a valid email address.";
 
         sendSignInFormWithValues("Alcachofas y más S.A. de C.V.", "patataypatat0");
 
         WebElement emailErrorMessage = driver.findElement(By.xpath("//*[@data-aid='MEMBERSHIP_SSO_ERR_REND']"));
         Assert.assertTrue(emailErrorMessage.isDisplayed());
-        Assert.assertEquals(emailErrorMessage.getText(), expectedErrorMessage);
+        Assert.assertEquals(emailErrorMessage.getText(), EXPECTED_ERROR_MESSAGE);
     }
 
     @Test
     public void testEmptyPassword(){
-        final String expectedErrorMessage = "Passwords can’t be nothing.";
+        final String EXPECTED_ERROR_MESSAGE = "Passwords can’t be nothing.";
 
         sendSignInFormWithValues("r15mez888@gmail.com", null);
 
         WebElement passwordErrorMessage = driver.findElement(By.xpath("//*[@data-aid='MEMBERSHIP_SSO_ERR_REND']"));
         Assert.assertTrue(passwordErrorMessage.isDisplayed());
-        Assert.assertEquals(passwordErrorMessage.getText(), expectedErrorMessage);
+        Assert.assertEquals(passwordErrorMessage.getText(), EXPECTED_ERROR_MESSAGE);
     }
 
     @Test
     public void testIncorrectCredentials(){
-        final String expectedErrorMessage = "The password/email address combo is incorrect.";
+        final String EXPECTED_ERROR_MESSAGE = "The password/email address combo is incorrect.";
 
         sendSignInFormWithValues("lecuhas@trenes.com", "patataypatat0");
 
         WebElement signInErrorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@data-aid='MEMBERSHIP_SSO_ERR_REND']")));
         Assert.assertTrue(signInErrorMessage.isDisplayed());
-        Assert.assertEquals(signInErrorMessage.getText(), expectedErrorMessage);
+        Assert.assertEquals(signInErrorMessage.getText(), EXPECTED_ERROR_MESSAGE);
     }
 
     @Test
     public void testSignIn(){
-        final String email = "r15mez888@gmail.com";
+        final String EMAIL = "r15mez888@gmail.com";
 
-        sendSignInFormWithValues(email, "patataypatat0");
+        sendSignInFormWithValues(EMAIL, "patataypatat0");
 
         WebElement signedInEmail = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@data-aid='ACCOUNT_DETAILS_EMAIL_REND']//p")));
 
         Assert.assertTrue(signedInEmail.isDisplayed());
-        Assert.assertEquals(signedInEmail.getText(), email);
+        Assert.assertEquals(signedInEmail.getText(), EMAIL);
     }
 }
