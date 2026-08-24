@@ -11,11 +11,18 @@ import java.time.Duration;
 
 public class CreateAccountPage extends BasePage {
     WebDriverWait wait = null;
-    By firstNameErrorMessage = By.xpath("//*[@data-aid='CREATE_ACCOUNT_NAME_FIRST_ERR']");
-    By lastNameErrorMessage = By.xpath("//*[@data-aid='CREATE_ACCOUNT_NAME_LAST_ERR']");
-    By emailErrorMessage = By.xpath("//*[@data-aid='CREATE_ACCOUNT_EMAIL_ERR']");
-    By instructionHeader = By.xpath("//h4");
-    By instructionDescription = By.xpath("//*[@data-aid='CREATE_ACCOUNT_DESCRIPTION_REND']");
+    final String FIRST_NAME_ERROR_MESSAGE_XPATH = "//*[@data-aid='CREATE_ACCOUNT_NAME_FIRST_ERR']";
+    final String LAST_NAME_ERROR_MESSAGE_XPATH = "//*[@data-aid='CREATE_ACCOUNT_NAME_LAST_ERR']";
+    final String EMAIL_ERROR_MESSAGE_XPATH = "//*[@data-aid='CREATE_ACCOUNT_EMAIL_ERR']";
+    final String INSTRUCTIONS_HEADER_XPATH = "//h4";
+    final String INSTRUCTIONS_DESCRIPTION_XPATH = "//*[@data-aid='CREATE_ACCOUNT_DESCRIPTION_REND']";
+    final String CREATE_ACCOUNT_LINK_XPATH = "//*[contains(@id, 'membership-create-account')]";
+
+    By firstNameErrorMessage = By.xpath(FIRST_NAME_ERROR_MESSAGE_XPATH);
+    By lastNameErrorMessage = By.xpath(LAST_NAME_ERROR_MESSAGE_XPATH);
+    By emailErrorMessage = By.xpath(EMAIL_ERROR_MESSAGE_XPATH);
+    By instructionHeader = By.xpath(INSTRUCTIONS_HEADER_XPATH);
+    By instructionDescription = By.xpath(INSTRUCTIONS_DESCRIPTION_XPATH);
 
     public CreateAccountPage(WebDriver driver) {
         super(driver);
@@ -28,7 +35,7 @@ public class CreateAccountPage extends BasePage {
         WebElement sessionIcon = driver.findElement(By.id("4"));
         sessionIcon.click();
 
-        WebElement createAccountLink = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[contains(@id, 'membership-create-account')]")));
+        WebElement createAccountLink = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(CREATE_ACCOUNT_LINK_XPATH)));
         createAccountLink.click();
     }
 
