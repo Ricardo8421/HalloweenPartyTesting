@@ -9,7 +9,15 @@ import java.time.Duration;
 
 public class ContactUsPage extends BasePage {
     WebDriverWait wait = null;
-
+    private final String CONTACT_US_FORM_XPATH = "//*[@data-aid='CONTACT_FORM_CONTAINER_REND']";
+    private final String EMAIL_MESSAGE_ERROR_XPATH = "//*[@data-aid='CONTACT_EMAIL_ERR_REND']";
+    private final String FIRST_NAME_XPATH = "//input[@data-aid='First Name']";
+    private final String LAST_NAME_XPATH = "//input[@data-aid='Last Name']";
+    private final String EMAIL_XPATH = "//input[@data-aid='CONTACT_FORM_EMAIL']";
+    private final String PHONE_XPATH = "//input[@data-aid='By entering a Phone Number you agree to our SMS Terms of Service']";
+    private final String MESSAGE_XPATH = "//textarea[@data-aid='CONTACT_FORM_MESSAGE']";
+    private final String SUCCESSFUL_MESSAGE_CSS = ".c2-5d";
+    private final String SUCCESSFUL_TEXT_CSS = "div.c2-1:nth-child(2) > p:nth-child(1)";
 
     public ContactUsPage(WebDriver driver) {
         super(driver);
@@ -20,21 +28,21 @@ public class ContactUsPage extends BasePage {
     public void navigateContactUsPage() {
         driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(1));
         WebElement contactUsForm = driver.findElement(By.xpath
-                ("//*[@data-aid='CONTACT_FORM_CONTAINER_REND']"));
+                (CONTACT_US_FORM_XPATH));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);", contactUsForm);
-       wait.until(ExpectedConditions.visibilityOf(contactUsForm));
+        wait.until(ExpectedConditions.visibilityOf(contactUsForm));
     }
 
     public boolean isErrorElementEmail(){
         WebElement emailMessageError = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//*[@data-aid='CONTACT_EMAIL_ERR_REND']")));
-       return emailMessageError.isDisplayed();
+                By.xpath(EMAIL_MESSAGE_ERROR_XPATH)));
+        return emailMessageError.isDisplayed();
     }
 
     public String getErrorMessageEmail(){
         WebElement emailMessageError = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//*[@data-aid='CONTACT_EMAIL_ERR_REND']")));
+                By.xpath(EMAIL_MESSAGE_ERROR_XPATH )));
         return emailMessageError.getText();
     }
 
@@ -47,41 +55,36 @@ public class ContactUsPage extends BasePage {
     }
 
     public void fillInformationContactUs(String firstNameUser, String lastNameUser, String emailUser, String phoneUser, String messageUser){
-        String firstNameXpath = "//input[@data-aid='First Name']";
-        String lastNameXpath = "//input[@data-aid='Last Name']";
-        String emailXpath = "//input[@data-aid='CONTACT_FORM_EMAIL']";
-        String phoneXpath = "//input[@data-aid='By entering a Phone Number you agree to our SMS Terms of Service']";
-        String messageXpath = "//textarea[@data-aid='CONTACT_FORM_MESSAGE']";
 
         try{
-            fillSingleElement(firstNameXpath, firstNameUser);
+            fillSingleElement(FIRST_NAME_XPATH, firstNameUser);
         }catch(StaleElementReferenceException e){
             System.out.println("ContactUsTest: First name input stale, retrying to fill...");
-            fillSingleElement(firstNameXpath, firstNameUser);
+            fillSingleElement(FIRST_NAME_XPATH, firstNameUser);
         }
         try{
-            fillSingleElement(lastNameXpath, lastNameUser);
+            fillSingleElement(LAST_NAME_XPATH, lastNameUser);
         }catch(StaleElementReferenceException e){
             System.out.println("ContactUsTest: Last name input stale, retrying to fill...");
-            fillSingleElement(lastNameXpath, lastNameUser);
+            fillSingleElement(LAST_NAME_XPATH, lastNameUser);
         }
         try{
-            fillSingleElement(emailXpath, emailUser);
+            fillSingleElement(EMAIL_XPATH, emailUser);
         }catch(StaleElementReferenceException e){
             System.out.println("ContactUsTest: Email input stale, retrying to fill...");
-            fillSingleElement(emailXpath, emailUser);
+            fillSingleElement(EMAIL_XPATH, emailUser);
         }
         try{
-            fillSingleElement(phoneXpath, phoneUser);
+            fillSingleElement(PHONE_XPATH, phoneUser);
         }catch(StaleElementReferenceException e){
             System.out.println("ContactUsTest: Phone input stale, retrying to fill...");
-            fillSingleElement(phoneXpath, phoneUser);
+            fillSingleElement(PHONE_XPATH, phoneUser);
         }
         try{
-            fillSingleElement(messageXpath, messageUser);
+            fillSingleElement(MESSAGE_XPATH, messageUser);
         }catch(StaleElementReferenceException e){
             System.out.println("ContactUsTest: Message input stale, retrying to fill...");
-            fillSingleElement(messageXpath, messageUser);
+            fillSingleElement(MESSAGE_XPATH, messageUser);
         }
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -93,12 +96,12 @@ public class ContactUsPage extends BasePage {
     }
 
     public boolean isSuccessElementEmail(){
-        WebElement successElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".c2-5d")));
+        WebElement successElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(SUCCESSFUL_MESSAGE_CSS)));
         return successElement.isDisplayed();
     }
 
     public String getSuccessMessage(){
-        WebElement successMessage = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div.c2-1:nth-child(2) > p:nth-child(1)")));
+        WebElement successMessage = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(SUCCESSFUL_TEXT_CSS)));
         return successMessage.getText();
     }
 
