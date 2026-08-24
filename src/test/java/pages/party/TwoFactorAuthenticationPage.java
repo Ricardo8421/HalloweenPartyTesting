@@ -1,28 +1,23 @@
-package party;
+package pages.party;
 
-import java.time.Duration;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.ElementClickInterceptedException;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.ITestContext;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import pages.common.BasePage;
 
-public class TwoFactorAuthentiationTest {
-    WebDriver driver = null;
+import java.time.Duration;
+
+public class TwoFactorAuthenticationPage extends BasePage {
     WebDriverWait wait = null;
 
-    @BeforeMethod
-    public void redirectTo2FAPage(ITestContext context){
-        driver = (WebDriver) context.getAttribute("driver");
-        wait = new WebDriverWait(driver, Duration.ofSeconds(3));
-        
+    public TwoFactorAuthenticationPage(WebDriver driver) {
+        super(driver);
+        navigateTo2FAPage();
+    }
+
+    public void navigateTo2FAPage(){
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(":2.container"));
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=':2.noAutoPopup']"))).click();
         driver.switchTo().parentFrame();
@@ -76,7 +71,7 @@ public class TwoFactorAuthentiationTest {
 
         driver.switchTo().parentFrame();
     }
-    
+
     public String findCode(){
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//*[@id='iframe-06']")));
 
@@ -89,67 +84,29 @@ public class TwoFactorAuthentiationTest {
         return code;
     }
 
-    public void assertMessageWithString(String message){
-        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//*[@id='iframe-06']")));
-
-        WebElement emailErrorMessage = driver.findElement(By.xpath("//*[@id='message']"));
-        Assert.assertTrue(emailErrorMessage.isDisplayed());
-        Assert.assertEquals(emailErrorMessage.getText(), message);
-
-        driver.switchTo().parentFrame();
-    }
-
-    @Test
-    public void testEmptyEmail(){
-        final String EXPECTED_ERROR_MESSAGE = "Please enter a valid email address";
-
-        sendCode(null);
-
-        assertMessageWithString(EXPECTED_ERROR_MESSAGE);
-    }
-
-    @Test
-    public void testIncorrectEmail(){
-        final String EXPECTED_ERROR_MESSAGE = "Please enter a valid email address";
-
-        sendCode("Alcachofas y más S.A. de C.V.");
-
-        assertMessageWithString(EXPECTED_ERROR_MESSAGE);
-    }
-
-    @Test
-    public void testEmptyCode(){
-        final String EXPECTED_ERROR_MESSAGE = "Invalid code. Please try again.";
-
-        sendCode("alcachofas@comida.com");
-        verifyCode(null);
-
-        assertMessageWithString(EXPECTED_ERROR_MESSAGE);
-    }
-
-    @Test
-    public void testIncorrectCode(){
-        final String EXPECTED_ERROR_MESSAGE = "Invalid code. Please try again.";
+    public void getErrorMessageCode(){
         String testCode = "000000";
-
         sendCode("alcachofas@comida.com");
         String code = findCode();
         if(code.equals(testCode)){
             testCode = "000001";
         }
         verifyCode(testCode);
-
-        assertMessageWithString(EXPECTED_ERROR_MESSAGE);
     }
 
-    @Test
-    public void test2FA(){
-        final String EXPECTED_ERROR_MESSAGE = "Verification successful!";
+    public boolean isMessageDisplayed(){
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//*[@id='iframe-06']")));
+        WebElement emailErrorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='message']")));
+        boolean messageDisplayed = emailErrorMessage.isDisplayed();
+        driver.switchTo().parentFrame();
+        return messageDisplayed;
+    }
 
-        sendCode("alcachofas@comida.com");
-        String code = findCode();
-        verifyCode(code);
-
-        assertMessageWithString(EXPECTED_ERROR_MESSAGE);
+    public String getMessage(){
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//*[@id='iframe-06']")));
+        WebElement emailErrorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='message']")));
+        String  message = emailErrorMessage.getText();
+        driver.switchTo().parentFrame();
+        return message;
     }
 }
