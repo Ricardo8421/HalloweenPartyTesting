@@ -1,6 +1,7 @@
 package pages.party;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.common.BasePage;
@@ -8,7 +9,6 @@ import pages.common.BasePage;
 import java.time.Duration;
 
 public class ContactUsPage extends BasePage {
-    WebDriverWait wait = null;
     private final String CONTACT_US_FORM_XPATH = "//*[@data-aid='CONTACT_FORM_CONTAINER_REND']";
     private final String EMAIL_MESSAGE_ERROR_XPATH = "//*[@data-aid='CONTACT_EMAIL_ERR_REND']";
     private final String FIRST_NAME_XPATH = "//input[@data-aid='First Name']";
@@ -19,35 +19,41 @@ public class ContactUsPage extends BasePage {
     private final String SUCCESSFUL_MESSAGE_CSS = ".c2-5d";
     private final String SUCCESSFUL_TEXT_CSS = "div.c2-1:nth-child(2) > p:nth-child(1)";
 
+    @FindBy(xpath = CONTACT_US_FORM_XPATH)
+    private WebElement contactUsForm;
+    @FindBy(xpath = EMAIL_MESSAGE_ERROR_XPATH)
+    private WebElement emailMessageError;
+    private WebElement input = null;
+    @FindBy(css = SUCCESSFUL_MESSAGE_CSS)
+    private WebElement successElement;
+    @FindBy (css = SUCCESSFUL_TEXT_CSS)
+    private WebElement successMessageElement;
+
     public ContactUsPage(WebDriver driver) {
         super(driver);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         navigateContactUsPage();
     }
 
     public void navigateContactUsPage() {
         driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(1));
-        WebElement contactUsForm = driver.findElement(By.xpath
-                (CONTACT_US_FORM_XPATH));
+        contactUsForm = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(CONTACT_US_FORM_XPATH)));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);", contactUsForm);
-        wait.until(ExpectedConditions.visibilityOf(contactUsForm));
+
     }
 
     public boolean isErrorElementEmail(){
-        WebElement emailMessageError = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath(EMAIL_MESSAGE_ERROR_XPATH)));
+        wait.until(ExpectedConditions.visibilityOf(emailMessageError));
         return emailMessageError.isDisplayed();
     }
 
     public String getErrorMessageEmail(){
-        WebElement emailMessageError = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath(EMAIL_MESSAGE_ERROR_XPATH )));
+        wait.until(ExpectedConditions.visibilityOf(emailMessageError));
         return emailMessageError.getText();
     }
 
     public void fillSingleElement(String xpath, String value){
-        WebElement input = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
+        input = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
         input.clear();
         if(value != null){
             input.sendKeys(value);
@@ -96,13 +102,13 @@ public class ContactUsPage extends BasePage {
     }
 
     public boolean isSuccessElementEmail(){
-        WebElement successElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(SUCCESSFUL_MESSAGE_CSS)));
+        wait.until(ExpectedConditions.visibilityOf(successElement));
         return successElement.isDisplayed();
     }
 
     public String getSuccessMessage(){
-        WebElement successMessage = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(SUCCESSFUL_TEXT_CSS)));
-        return successMessage.getText();
+        wait.until(ExpectedConditions.elementToBeClickable(successMessageElement));
+        return successMessageElement.getText();
     }
 
 }

@@ -20,6 +20,15 @@ public class TwoFactorAuthenticationPage extends BasePage {
     final String VERIFY_CODE_BUTTON_XPATH = "//div[@id='verificationSection']//button";
     final String MESSAGE_XPATH = "//*[@id='message']";
 
+    private WebElement moreDropdown = null;
+    private WebElement expectedElement = null;
+    private WebElement emailInput = null;
+    private WebElement sendCodeButton = null;
+    private WebElement codeInput = null;
+    private WebElement verifyCodeButton = null;
+    private WebElement codeMessage = null;
+    private WebElement emailErrorMessage = null;
+
     public TwoFactorAuthenticationPage(WebDriver driver) {
         super(driver);
         navigateTo2FAPage();
@@ -32,10 +41,10 @@ public class TwoFactorAuthenticationPage extends BasePage {
         driver.switchTo().parentFrame();
 
 
-        WebElement moreDropdown = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(MORE_DROPDOWN_XPATH)));
+        moreDropdown = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(MORE_DROPDOWN_XPATH)));
         moreDropdown.click();
 
-        WebElement expectedElement = driver.findElement(By.xpath(EXPECTED_ELEMENT_XPATH));
+        expectedElement = driver.findElement(By.xpath(EXPECTED_ELEMENT_XPATH));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);", expectedElement);
 
@@ -48,9 +57,10 @@ public class TwoFactorAuthenticationPage extends BasePage {
     }
 
     public void sendCode(String email){
+        driver.switchTo().parentFrame();
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath(CONTENT_XPATH)));
 
-        WebElement emailInput = driver.findElement(By.xpath(EMAIL_INPUT_XPATH));
+        emailInput = driver.findElement(By.xpath(EMAIL_INPUT_XPATH));
 
         emailInput.clear();
 
@@ -58,7 +68,7 @@ public class TwoFactorAuthenticationPage extends BasePage {
             emailInput.sendKeys(email);
         }
 
-        WebElement sendCodeButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(SEND_CODE_BUTTON_XPATH)));
+        sendCodeButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(SEND_CODE_BUTTON_XPATH)));
         sendCodeButton.click();
 
         driver.switchTo().parentFrame();
@@ -67,7 +77,7 @@ public class TwoFactorAuthenticationPage extends BasePage {
     public void verifyCode(String code){
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath(CONTENT_XPATH)));
 
-        WebElement codeInput = driver.findElement(By.xpath(CODE_INPUT_XPATH));
+        codeInput = driver.findElement(By.xpath(CODE_INPUT_XPATH));
 
         codeInput.clear();
 
@@ -75,7 +85,7 @@ public class TwoFactorAuthenticationPage extends BasePage {
             codeInput.sendKeys(code);
         }
 
-        WebElement verifyCodeButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(VERIFY_CODE_BUTTON_XPATH)));
+        verifyCodeButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(VERIFY_CODE_BUTTON_XPATH)));
         verifyCodeButton.click();
 
         driver.switchTo().parentFrame();
@@ -84,7 +94,7 @@ public class TwoFactorAuthenticationPage extends BasePage {
     public String findCode(){
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath(CONTENT_XPATH)));
 
-        WebElement codeMessage = driver.findElement(By.xpath(MESSAGE_XPATH));
+        codeMessage = driver.findElement(By.xpath(MESSAGE_XPATH));
 
         String code = codeMessage.getText().substring(23, 29);
 
@@ -105,7 +115,7 @@ public class TwoFactorAuthenticationPage extends BasePage {
 
     public boolean isMessageDisplayed(){
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath(CONTENT_XPATH)));
-        WebElement emailErrorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(MESSAGE_XPATH)));
+        emailErrorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(MESSAGE_XPATH)));
         boolean messageDisplayed = emailErrorMessage.isDisplayed();
         driver.switchTo().parentFrame();
         return messageDisplayed;
@@ -113,7 +123,7 @@ public class TwoFactorAuthenticationPage extends BasePage {
 
     public String getMessage(){
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath(CONTENT_XPATH)));
-        WebElement emailErrorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(MESSAGE_XPATH)));
+        emailErrorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(MESSAGE_XPATH)));
         String  message = emailErrorMessage.getText();
         driver.switchTo().parentFrame();
         return message;

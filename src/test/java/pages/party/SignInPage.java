@@ -16,6 +16,14 @@ public class SignInPage extends BasePage {
     final String ERROR_MESSAGE_XPATH = "//*[@data-aid='MEMBERSHIP_SSO_ERR_REND']";
     final String SIGNED_IN_EMAIL_XPATH = "//*[@data-aid='ACCOUNT_DETAILS_EMAIL_REND']//p";
 
+    private WebElement sessionIcon = null;
+    private WebElement createAccountLink = null;
+    private WebElement emailInput = null;
+    private WebElement passwordInput = null;
+    private WebElement signInButton = null;
+    private WebElement errorMessage = null;
+    private WebElement signedInEmail = null;
+
     public SignInPage(WebDriver driver) {
         super(driver);
         navigateToSignIn();
@@ -24,16 +32,16 @@ public class SignInPage extends BasePage {
     public void navigateToSignIn(){
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-        WebElement sessionIcon = driver.findElement(By.id("4"));
+        sessionIcon = driver.findElement(By.id("4"));
         sessionIcon.click();
 
-        WebElement createAccountLink = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(CREATE_ACCOUNT_LINK_XPATH)));
+        createAccountLink = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(CREATE_ACCOUNT_LINK_XPATH)));
         createAccountLink.click();
     }
 
     public void sendSignInFormWithValues(String email, String password){
-        WebElement emailInput = driver.findElement(By.name("email"));
-        WebElement passwordInput = driver.findElement(By.name("password"));
+        emailInput = driver.findElement(By.name("email"));
+        passwordInput = driver.findElement(By.name("password"));
 
         emailInput.clear();
         passwordInput.clear();
@@ -45,27 +53,27 @@ public class SignInPage extends BasePage {
             passwordInput.sendKeys(password);
         }
 
-        WebElement signInButton = driver.findElement(By.xpath(SIGN_IN_BUTTON_XPATH));
+        signInButton = driver.findElement(By.xpath(SIGN_IN_BUTTON_XPATH));
         signInButton.click();
     }
 
     public boolean isDisplayedErrorMessage(){
-        WebElement errorMessage = driver.findElement(By.xpath(ERROR_MESSAGE_XPATH));
+        errorMessage = driver.findElement(By.xpath(ERROR_MESSAGE_XPATH));
         return errorMessage.isDisplayed();
     }
 
     public String getErrorMessage(){
-        WebElement errorMessageText = driver.findElement(By.xpath(ERROR_MESSAGE_XPATH));
-        return errorMessageText.getText();
+        errorMessage = driver.findElement(By.xpath(ERROR_MESSAGE_XPATH));
+        return errorMessage.getText();
     }
 
     public boolean isDisplayedSuccessMessage(){
-        WebElement signedInEmail = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SIGNED_IN_EMAIL_XPATH)));
+        signedInEmail = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SIGNED_IN_EMAIL_XPATH)));
         return signedInEmail.isDisplayed();
     }
 
     public String getSuccessMessage(){
-        WebElement signedInEmail = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SIGNED_IN_EMAIL_XPATH)));
+        signedInEmail = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SIGNED_IN_EMAIL_XPATH)));
         return signedInEmail.getText();
     }
 }

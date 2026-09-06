@@ -3,6 +3,8 @@ package pages.party;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.common.BasePage;
@@ -24,6 +26,20 @@ public class CreateAccountPage extends BasePage {
     By instructionHeader = By.xpath(INSTRUCTIONS_HEADER_XPATH);
     By instructionDescription = By.xpath(INSTRUCTIONS_DESCRIPTION_XPATH);
 
+    @FindBy(id = "4")
+    private WebElement sessionIcon;
+    @FindBy (xpath = CREATE_ACCOUNT_LINK_XPATH)
+    private WebElement createAccountLink;
+    @FindBy (name = "nameFirst")
+    private WebElement firstNameInput;
+    @FindBy (name = "nameLast")
+    private WebElement lastNameInput;
+    @FindBy (name = "emial")
+    private WebElement emailInput;
+    @FindBy (name = "phone")
+    private WebElement phoneInput;
+    private WebElement createButton = null;
+
     public CreateAccountPage(WebDriver driver) {
         super(driver);
         navigateContactUsPage();
@@ -31,20 +47,13 @@ public class CreateAccountPage extends BasePage {
 
     public void navigateContactUsPage() {
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
-        WebElement sessionIcon = driver.findElement(By.id("4"));
         sessionIcon.click();
 
-        WebElement createAccountLink = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(CREATE_ACCOUNT_LINK_XPATH)));
+        wait.until(ExpectedConditions.elementToBeClickable(createAccountLink));
         createAccountLink.click();
     }
 
     public void sendCreateAccountFormWithValues(String firstName, String lastName, String email, String phone){
-        WebElement firstNameInput = driver.findElement(By.name("nameFirst"));
-        WebElement lastNameInput = driver.findElement(By.name("nameLast"));
-        WebElement emailInput = driver.findElement(By.name("email"));
-        WebElement phoneInput = driver.findElement(By.name("phone"));
-
         firstNameInput.clear();
         lastNameInput.clear();
         emailInput.clear();
@@ -63,7 +72,7 @@ public class CreateAccountPage extends BasePage {
             phoneInput.sendKeys(phone);
         }
 
-        WebElement createButton = driver.findElement(By.className("x-el-button"));
+        createButton = driver.findElement(By.className("x-el-button"));
         createButton.click();
     }
 
