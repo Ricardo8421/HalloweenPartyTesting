@@ -14,7 +14,7 @@ import org.testng.annotations.*;
 public class BaseTest {
     private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
-    @BeforeSuite
+    @BeforeSuite (alwaysRun = true)
     @Parameters({"browser"})
     public void setUp(@Optional("firefox") String xmlBrowser) {
         ConfigReader.initializeConfig();
@@ -55,7 +55,7 @@ public class BaseTest {
         return driver.get();
     }
 
-    @AfterSuite
+    @AfterSuite (alwaysRun = true)
     public void tearDown() {
         if (driver.get() != null) {
             driver.get().quit();

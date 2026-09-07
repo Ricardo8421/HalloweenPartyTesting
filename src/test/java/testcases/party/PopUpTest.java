@@ -8,7 +8,7 @@ import testcases.common.BaseTest;
 public class PopUpTest extends BaseTest {
     PopUpPage popUpPage;
 
-    @Test
+    @Test (groups = {"smoke", "regression"})
     public void testPopUpClose(){
         popUpPage = new PopUpPage(getDriver());
         popUpPage.clickCloseButton();

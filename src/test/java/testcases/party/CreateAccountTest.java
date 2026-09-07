@@ -13,7 +13,7 @@ public class CreateAccountTest extends BaseTest {
     final String INSTRUCTION_DESCRIPTION_MESSAGE = "You're almost there! We sent an email to alcachofas@comida.com with a link to activate your account. Please check your email and click the activation link.";
 
     CreateAccountPage createAccountPage;
-    @Test
+    @Test (groups = {"smoke"})
     public void testEmptyFirstName(){
         createAccountPage = new CreateAccountPage(getDriver());
         createAccountPage.sendCreateAccountFormWithValues(null, "Alcachofa", "alcachofas@comida.com", null);
@@ -21,7 +21,7 @@ public class CreateAccountTest extends BaseTest {
         Assert.assertEquals(createAccountPage.getFirstNameErrorMessage(), FIRSTNAME_ERROR_MESSAGE);
     }
 
-    @Test
+    @Test (groups = {"smoke"})
     public void testEmptyLastName(){
         createAccountPage = new CreateAccountPage(getDriver());
         createAccountPage.sendCreateAccountFormWithValues("Juanito", null, "alcachofas@comida.com", null);
@@ -29,15 +29,15 @@ public class CreateAccountTest extends BaseTest {
         Assert.assertEquals(createAccountPage.getLastNameErrorMessage(), LASTNAME_ERROR_MESSAGE);
     }
 
-    @Test
+    @Test (groups = {"smoke"})
     public void testEmptyEmail(){
         createAccountPage = new CreateAccountPage(getDriver());
         createAccountPage.sendCreateAccountFormWithValues("Juanito", "Alcachofa", null, null);
         Assert.assertTrue(createAccountPage.isEmailDisplayed());
         Assert.assertEquals(createAccountPage.getEmailErrorMessage(), EMAIL_ERROR_MESSAGE);
     }
-    
-    @Test
+
+    @Test (groups = {"smoke"})
     public void testIncorrectEmail(){
         createAccountPage = new CreateAccountPage(getDriver());
         createAccountPage.sendCreateAccountFormWithValues("Juanito", "Alcachofa", "Alcachofas y más S.A. de C.V.", null);
@@ -45,7 +45,7 @@ public class CreateAccountTest extends BaseTest {
         Assert.assertEquals(createAccountPage.getEmailErrorMessage(), EMAIL_ERROR_MESSAGE);
     }
 
-    @Test
+    @Test (groups = {"smoke"})
     public void testCreateAccountWithoutPhone(){
         createAccountPage = new CreateAccountPage(getDriver());
         createAccountPage.sendCreateAccountFormWithValues("Juanito", "Alcachofa", "alcachofas@comida.com", null);
@@ -55,7 +55,7 @@ public class CreateAccountTest extends BaseTest {
         Assert.assertEquals(createAccountPage.getInstructionDescriptionErrorMessage(), INSTRUCTION_DESCRIPTION_MESSAGE);
     }
 
-    @Test
+    @Test (groups = {"smoke"})
     public void testCreateAccountWithPhone(){
         createAccountPage = new CreateAccountPage(getDriver());
         createAccountPage.sendCreateAccountFormWithValues("Juanito", "Alcachofa", "alcachofas@comida.com", "5512345678");

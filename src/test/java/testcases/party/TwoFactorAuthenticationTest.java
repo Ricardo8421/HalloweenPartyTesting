@@ -11,7 +11,7 @@ public class TwoFactorAuthenticationTest extends BaseTest {
     final String SUCCESS_MESSAGE = "Verification successful!";
     TwoFactorAuthenticationPage twoFactorAuthenticationPage;
 
-    @Test
+    @Test (priority = 1, groups = {"regression"})
     public void testEmptyEmail(){
         twoFactorAuthenticationPage = new TwoFactorAuthenticationPage(getDriver());
         twoFactorAuthenticationPage.sendCode(null);
@@ -19,7 +19,7 @@ public class TwoFactorAuthenticationTest extends BaseTest {
         Assert.assertEquals(twoFactorAuthenticationPage.getMessage(), EMAIL_ERROR_MESSAGE);
     }
 
-    @Test
+    @Test (priority = 1, groups = {"regression"})
     public void testIncorrectEmail(){
         twoFactorAuthenticationPage = new TwoFactorAuthenticationPage(getDriver());
         twoFactorAuthenticationPage.sendCode("Alcachofas y más S.A. de C.V.");
@@ -27,7 +27,7 @@ public class TwoFactorAuthenticationTest extends BaseTest {
         Assert.assertEquals(twoFactorAuthenticationPage.getMessage(), EMAIL_ERROR_MESSAGE);
     }
 
-    @Test
+    @Test (priority = 1, groups = {"regression"})
     public void testEmptyCode(){
         twoFactorAuthenticationPage = new TwoFactorAuthenticationPage(getDriver());
         twoFactorAuthenticationPage.sendCode("alcachofas@comida.com");
@@ -36,7 +36,7 @@ public class TwoFactorAuthenticationTest extends BaseTest {
         Assert.assertEquals(twoFactorAuthenticationPage.getMessage(), CODE_ERROR_MESSAGE);
     }
 
-    @Test
+    @Test (priority = 1, groups = {"regression"})
     public void testIncorrectCode(){
         twoFactorAuthenticationPage = new TwoFactorAuthenticationPage(getDriver());
         twoFactorAuthenticationPage.getErrorMessageCode();
@@ -44,7 +44,7 @@ public class TwoFactorAuthenticationTest extends BaseTest {
         Assert.assertEquals(twoFactorAuthenticationPage.getMessage(), CODE_ERROR_MESSAGE);
     }
 
-    @Test
+    @Test (priority = 1, groups = {"regression"})
     public void test2FA(){
         twoFactorAuthenticationPage = new TwoFactorAuthenticationPage(getDriver());
         twoFactorAuthenticationPage.sendCode("alcachofas@comida.com");

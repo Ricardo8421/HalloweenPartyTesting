@@ -10,7 +10,7 @@ public class ContactUsTest extends BaseTest {
     final String EMAIL_MESSAGE = "Please enter a valid email address.";
     final String SUCCESS_TEXT = "Thank you for your inquiry! We will get back to you within 48 Years.";
 
-    @Test (priority = 1)
+    @Test (priority = 1, groups = {"regression"})
     public void testSendEmptyEmail () {
         contactUsPage = new ContactUsPage(getDriver());
         contactUsPage.fillInformationContactUs("test","test"," ","test","test");
@@ -19,7 +19,7 @@ public class ContactUsTest extends BaseTest {
 
     }
 
-    @Test (priority = 2)
+    @Test (priority = 2, groups = {"regression"})
     public void testWrongFormatEmail () {
         contactUsPage = new ContactUsPage(getDriver());
         contactUsPage.fillInformationContactUs("Juanito","Alcachofa",
@@ -28,7 +28,7 @@ public class ContactUsTest extends BaseTest {
         Assert.assertEquals(contactUsPage.getErrorMessageEmail(), EMAIL_MESSAGE);
     }
 
-    @Test (priority = 3)
+    @Test (priority = 3, groups = {"regression"})
     public void testSendCorrectInformation (){
         contactUsPage = new ContactUsPage(getDriver());
         contactUsPage.fillInformationContactUs("Juanito", "Alcachofa",

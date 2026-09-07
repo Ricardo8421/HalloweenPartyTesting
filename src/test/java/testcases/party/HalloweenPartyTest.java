@@ -17,7 +17,7 @@ public class HalloweenPartyTest extends BaseTest {
     final String DESCRIPTION_TEXT_3 = "The Jira ticket has been submitted via temporal vortex and fixed in CandyMapperR2.com";
 
 
-    @Test
+    @Test (groups = {"smoke"})
     public void testHostZombieParty() {
         halloweenPartyPage = new HalloweenPartyPage(getDriver());
         halloweenPartyPage.clickPartyButton("I Am Hosting A Party");
@@ -30,7 +30,7 @@ public class HalloweenPartyTest extends BaseTest {
         halloweenPartyPage.verifyDropDown();
     }
 
-    @Test
+    @Test (groups = {"smoke"})
     public void testHostGhostParty() {
         halloweenPartyPage = new HalloweenPartyPage(getDriver());
         halloweenPartyPage.clickPartyButton("I Am Hosting A Party");
@@ -43,7 +43,7 @@ public class HalloweenPartyTest extends BaseTest {
         halloweenPartyPage.verifyDropDown();
     }
 
-    @Test
+    @Test (groups = {"smoke"})
     public void testAttendZombieton(){
         halloweenPartyPage = new HalloweenPartyPage(getDriver());
         halloweenPartyPage.clickPartyButton("I Am Attending A Party");
@@ -55,8 +55,8 @@ public class HalloweenPartyTest extends BaseTest {
         Assert.assertEquals(halloweenPartyPage.getNumberGuestText(), NUMBER_GUESTS.trim());
         halloweenPartyPage.verifyDropDown();
     }
-    
-    @Test
+
+    @Test (groups = {"smoke"})
     public void testAttendGhostville(){
         halloweenPartyPage = new HalloweenPartyPage(getDriver());
         halloweenPartyPage.clickPartyButton("I Am Attending A Party");
@@ -69,7 +69,7 @@ public class HalloweenPartyTest extends BaseTest {
         halloweenPartyPage.verifyDropDown();
     }
 
-    @Test
+    @Test (groups = {"smoke"})
     public void testAttendImScared(){
         halloweenPartyPage = new HalloweenPartyPage(getDriver());
         halloweenPartyPage.clickPartyButton("I Am Attending A Party");
