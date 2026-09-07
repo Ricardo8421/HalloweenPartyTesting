@@ -32,6 +32,7 @@
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <suiteXmlFile>smoke-suite.xml</suiteXmlFile>
     </properties>
     <build>
         <plugins>
@@ -41,7 +42,7 @@
                 <version>3.5.0</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/${suiteXmlFile}</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>

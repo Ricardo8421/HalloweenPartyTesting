@@ -2,6 +2,15 @@ package testcases.common;
 
 import pages.party.config.ConfigReader;
 import io.github.bonigarcia.wdm.WebDriverManager;
+
+import java.io.File;
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -9,6 +18,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.testng.ITestResult;
 import org.testng.annotations.*;
 
 public class BaseTest {
@@ -63,10 +73,31 @@ public class BaseTest {
         }
     }
 
-    @AfterMethod
-    public void delay() throws InterruptedException {
+    @AfterMethod(alwaysRun = true)
+    public void checkFailure(ITestResult result) throws InterruptedException {
+        // DEBUG
         int waitMiliseconds = Integer.parseInt(ConfigReader.getProperty("explicit.wait"));
         Thread.sleep(waitMiliseconds);
+
+        if(result.getStatus() == ITestResult.FAILURE){
+            File imgFile = ((TakesScreenshot)getDriver()).getScreenshotAs(OutputType.FILE);
+            // Get all info for screenshot name
+            String testName = result.getMethod().getMethodName();
+            LocalDateTime failureTime = LocalDateTime.now();
+            DateTimeFormatter timeFormater = DateTimeFormatter.ofPattern("yyyy.MM.dd.HH.mm.ss");
+            String failureTimeString = failureTime.format(timeFormater);
+            String screenshotFileName = testName + "_" + failureTimeString + ".png";
+
+            try{
+                FileUtils.copyFile(imgFile, new File("src/test/resources/screenshots/" + screenshotFileName));
+
+                // TODO: Log successful screenshot save
+                System.out.println("Guardó la captura en como nombre " + screenshotFileName);
+            }catch(IOException ex){
+                // TODO: Log failure to save a screenshot
+                System.out.println("No guardo nadota");
+            }
+        }
     }
 
 }
