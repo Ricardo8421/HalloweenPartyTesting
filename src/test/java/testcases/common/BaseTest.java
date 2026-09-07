@@ -89,7 +89,7 @@ public class BaseTest {
             String screenshotFileName = testName + "_" + failureTimeString + ".png";
 
             try{
-                FileUtils.copyFile(imgFile, new File("src/test/resources/screenshots/" + screenshotFileName));
+                FileUtils.copyFile(imgFile, new File("target/artifacts/screenshots/" + screenshotFileName));
 
                 // TODO: Log successful screenshot save
                 System.out.println("Guardó la captura en como nombre " + screenshotFileName);
