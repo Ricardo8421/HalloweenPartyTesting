@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -15,7 +16,6 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 public class HalloweenPartyPage extends BasePage {
-    WebDriverWait wait = null;
     final String SPAN_GUEST_XPATH = "/html/body/div[2]/div/div/div[2]/div/div/section/div/h1/span";
     final String MORE_DROPDOWN_XPATH = "//*[@id='2']";
     final String GUEST_FRAME_XPATH = "//*[@id='iframe-06']";
@@ -30,20 +30,34 @@ public class HalloweenPartyPage extends BasePage {
     final String HALLOWEEN_LINK_CSS_SELECTOR = "li.nav-item:nth-child(4) > a:nth-child(1)";
     final String HALLOWEEN_LINK_DROP_CSS_SELECTOR = "li.visible:nth-child(4) > a:nth-child(1)";
 
-    By spanGuest =  By.xpath(SPAN_GUEST_XPATH);
-    By numberGuest = By.cssSelector(NUMBER_GUEST_CSS_SELECTOR);
 
-    private WebElement halloweenLink = null;
-    private WebElement moreDropdown = null;
+    @FindBy (css = HALLOWEEN_LINK_CSS_SELECTOR)
+    private WebElement halloweenLink;
+    @FindBy (xpath = MORE_DROPDOWN_XPATH)
+    private WebElement moreDropdown;
+    @FindBy (xpath = SPAN_GUEST_XPATH)
+    private WebElement spanGuestElement;
+    @FindBy (css = NUMBER_GUEST_CSS_SELECTOR)
+    private WebElement numberGuestElement;
+    @FindBy (xpath = DROPDOWN_ELEMENT_XPATH)
+    private WebElement dropDownElement;
+    @FindBy (xpath = IMAGE_XPATH)
+    private WebElement image;
+    @FindBy (xpath = ERROR_MESSAGE_ELEMENT_XPATH)
+    private WebElement errorMessageElement;
+    @FindBy (xpath = SUBTITLE_XPATH)
+    private WebElement subtitleElement;
+    @FindBy (css = HALLOWEEN_LINK_DROP_CSS_SELECTOR)
+    private WebElement halloweenLinkDrop;
+    @FindBy ( xpath = FIRST_PARAGRAPH_XPATH)
+    private WebElement firstParagraph;
+    @FindBy (xpath = SECOND_PARAGRAPH_XPATH)
+    private WebElement secondParagraph;
+    @FindBy (xpath = THIRD_PARAGRAPH_XPATH)
+    private WebElement thirdParagraph;
+
     private WebElement actionPartyButton = null;
-    private WebElement spanGuestElement = null;
-    private WebElement numberGuestElement = null;
-    private WebElement dropDownElement = null;
-    private WebElement image = null;
-    private WebElement errorMessageElement = null;
-    private WebElement subtitleElement = null;
-    private WebElement p = null;
-    private WebElement halloweenLinkDrop = null;
+
 
     public HalloweenPartyPage(WebDriver driver) {
         super(driver);
@@ -54,22 +68,18 @@ public class HalloweenPartyPage extends BasePage {
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.get("https://candymapper.com/");
 
-        halloweenLink = driver.findElement(By.cssSelector(HALLOWEEN_LINK_CSS_SELECTOR));
-
         if (halloweenLink.isDisplayed()) {
             halloweenLink.click();
         }else{
-            moreDropdown = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(MORE_DROPDOWN_XPATH)));
+            wait.until(ExpectedConditions.elementToBeClickable(moreDropdown));
             moreDropdown.click();
-            halloweenLinkDrop = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                    By.cssSelector(HALLOWEEN_LINK_DROP_CSS_SELECTOR)));
+            wait.until(ExpectedConditions.visibilityOf(halloweenLinkDrop));
             halloweenLinkDrop.click();
         }
     }
 
     public void clickPartyButton(String action) {
         final String ACTION_PARTY_BUTTON = "//a[contains(text(), \""+action+"\")]";
-
         actionPartyButton = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.xpath(ACTION_PARTY_BUTTON)));
         actionPartyButton.click();
@@ -77,11 +87,11 @@ public class HalloweenPartyPage extends BasePage {
 
     public boolean isGuestSpanDisplayed(){
         driver.switchTo().parentFrame();
-        spanGuestElement = wait.until(ExpectedConditions.visibilityOfElementLocated(spanGuest));
+        wait.until(ExpectedConditions.visibilityOf(spanGuestElement));
         return spanGuestElement.isDisplayed();
     }
     public String getGuestSpanName(){
-        spanGuestElement = wait.until(ExpectedConditions.visibilityOfElementLocated(spanGuest));
+        wait.until(ExpectedConditions.visibilityOf(spanGuestElement));
         return spanGuestElement.getText();
     }
 
@@ -96,17 +106,17 @@ public class HalloweenPartyPage extends BasePage {
 
     public boolean isNumberGuestDisplayed(){
         driver.switchTo().frame("iframe-06");
-        numberGuestElement=  wait.until(ExpectedConditions.visibilityOfElementLocated(numberGuest));
+        wait.until(ExpectedConditions.visibilityOf(numberGuestElement));
         return numberGuestElement.isDisplayed();
     }
 
     public String getNumberGuestText(){
-        numberGuestElement = wait.until(ExpectedConditions.visibilityOfElementLocated(numberGuest));
+        wait.until(ExpectedConditions.visibilityOf(numberGuestElement));
         return numberGuestElement.getText().trim();
     }
 
     public void verifyDropDown(){
-        dropDownElement =  wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DROPDOWN_ELEMENT_XPATH)));
+        wait.until(ExpectedConditions.visibilityOf(dropDownElement));
         Select dropDown = new Select(dropDownElement);
         List<WebElement> options = dropDown.getOptions();
         options.forEach(option -> {
@@ -115,60 +125,59 @@ public class HalloweenPartyPage extends BasePage {
     }
 
     public boolean isImageDisplayed (){
-        image = driver.findElement(By.xpath(IMAGE_XPATH));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);", image);
         return image.isDisplayed();
     }
 
     public boolean isErrorMessageDisplayed(){
-        errorMessageElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(ERROR_MESSAGE_ELEMENT_XPATH)));
+        wait.until(ExpectedConditions.visibilityOf(errorMessageElement));
         return errorMessageElement.isDisplayed();
     }
 
     public String getErrorMessage(){
-        errorMessageElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(ERROR_MESSAGE_ELEMENT_XPATH)));
+        wait.until(ExpectedConditions.visibilityOf(errorMessageElement));
         return errorMessageElement.getText();
     }
 
     public boolean isSubTitleErrorDisplayed(){
-        subtitleElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SUBTITLE_XPATH)));
+        wait.until(ExpectedConditions.visibilityOf(subtitleElement));
         return subtitleElement.isDisplayed();
     }
 
     public String getSubTitleErrorText(){
-        subtitleElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SUBTITLE_XPATH)));
+        wait.until(ExpectedConditions.visibilityOf(subtitleElement));
         return subtitleElement.getText();
     }
 
     public boolean isFirstParagraphDisplayed(){
-        p = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(FIRST_PARAGRAPH_XPATH)));
-        return p.isDisplayed();
+        wait.until(ExpectedConditions.visibilityOf(firstParagraph));
+        return firstParagraph.isDisplayed();
     }
 
     public String getFirstParagraphText(){
-        p = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(FIRST_PARAGRAPH_XPATH)));
-        return p.getText();
+        wait.until(ExpectedConditions.visibilityOf(firstParagraph));
+        return firstParagraph.getText();
     }
 
     public boolean isSecondParagraphDisplayed(){
-        p = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SECOND_PARAGRAPH_XPATH)));
-        return p.isDisplayed();
+        wait.until(ExpectedConditions.visibilityOf(secondParagraph));
+        return secondParagraph.isDisplayed();
     }
 
     public String getSecondParagraphText(){
-        p =  wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SECOND_PARAGRAPH_XPATH)));
-        return p.getText();
+        wait.until(ExpectedConditions.visibilityOf(secondParagraph));
+        return secondParagraph.getText();
     }
 
     public boolean isThirdParagraphDisplayed(){
-        p = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(THIRD_PARAGRAPH_XPATH)));
-        return p.isDisplayed();
+        wait.until(ExpectedConditions.visibilityOf(thirdParagraph));
+        return thirdParagraph.isDisplayed();
     }
 
     public String getThirdParagraphText(){
-        p = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(THIRD_PARAGRAPH_XPATH)));
-        return p.getText();
+        wait.until(ExpectedConditions.visibilityOf(thirdParagraph));
+        return thirdParagraph.getText();
     }
 
 }

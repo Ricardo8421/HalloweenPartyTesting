@@ -12,33 +12,44 @@ import pages.common.BasePage;
 import java.time.Duration;
 
 public class CreateAccountPage extends BasePage {
-    WebDriverWait wait = null;
     final String FIRST_NAME_ERROR_MESSAGE_XPATH = "//*[@data-aid='CREATE_ACCOUNT_NAME_FIRST_ERR']";
     final String LAST_NAME_ERROR_MESSAGE_XPATH = "//*[@data-aid='CREATE_ACCOUNT_NAME_LAST_ERR']";
     final String EMAIL_ERROR_MESSAGE_XPATH = "//*[@data-aid='CREATE_ACCOUNT_EMAIL_ERR']";
     final String INSTRUCTIONS_HEADER_XPATH = "//h4";
     final String INSTRUCTIONS_DESCRIPTION_XPATH = "//*[@data-aid='CREATE_ACCOUNT_DESCRIPTION_REND']";
     final String CREATE_ACCOUNT_LINK_XPATH = "//*[contains(@id, 'membership-create-account')]";
+    final String SESSION_ICON = "4";
+    final String NAME_FIRST =  "nameFirst";
+    final String LAST_NAME = "nameLast";
+    final String EMAIL = "email";
+    final String PHONE = "phone";
+    final String CREATE_BUTTON = "x-el-button";
 
-    By firstNameErrorMessage = By.xpath(FIRST_NAME_ERROR_MESSAGE_XPATH);
-    By lastNameErrorMessage = By.xpath(LAST_NAME_ERROR_MESSAGE_XPATH);
-    By emailErrorMessage = By.xpath(EMAIL_ERROR_MESSAGE_XPATH);
-    By instructionHeader = By.xpath(INSTRUCTIONS_HEADER_XPATH);
-    By instructionDescription = By.xpath(INSTRUCTIONS_DESCRIPTION_XPATH);
 
-    @FindBy(id = "4")
-    private WebElement sessionIcon;
+    @FindBy (xpath = FIRST_NAME_ERROR_MESSAGE_XPATH)
+    private WebElement firstNameErrorMessage;
+    @FindBy (xpath = LAST_NAME_ERROR_MESSAGE_XPATH)
+    private WebElement lastNameErrorMessage;
+    @FindBy (xpath = EMAIL_ERROR_MESSAGE_XPATH)
+    private WebElement emailErrorMessage;
+    @FindBy (xpath = INSTRUCTIONS_HEADER_XPATH)
+    private WebElement instructionHeader;
+    @FindBy (xpath = INSTRUCTIONS_DESCRIPTION_XPATH)
+    private WebElement instructionDescription;
     @FindBy (xpath = CREATE_ACCOUNT_LINK_XPATH)
     private WebElement createAccountLink;
-    @FindBy (name = "nameFirst")
+    @FindBy(id = SESSION_ICON)
+    private WebElement sessionIcon;
+    @FindBy (name = NAME_FIRST)
     private WebElement firstNameInput;
-    @FindBy (name = "nameLast")
+    @FindBy (name = LAST_NAME)
     private WebElement lastNameInput;
-    @FindBy (name = "emial")
+    @FindBy (name = EMAIL)
     private WebElement emailInput;
-    @FindBy (name = "phone")
+    @FindBy (name = PHONE)
     private WebElement phoneInput;
-    private WebElement createButton = null;
+    @FindBy (className = CREATE_BUTTON)
+    private WebElement createButton;
 
     public CreateAccountPage(WebDriver driver) {
         super(driver);
@@ -72,43 +83,42 @@ public class CreateAccountPage extends BasePage {
             phoneInput.sendKeys(phone);
         }
 
-        createButton = driver.findElement(By.className("x-el-button"));
         createButton.click();
     }
 
     public boolean isFirstNameDisplayed(){
-        return driver.findElement(firstNameErrorMessage).isDisplayed();
+        return firstNameErrorMessage.isDisplayed();
     }
 
     public String getFirstNameErrorMessage(){
-        return driver.findElement(firstNameErrorMessage).getText();
+        return firstNameErrorMessage.getText();
     }
 
     public boolean isLastNameDisplayed(){
-        return driver.findElement(lastNameErrorMessage).isDisplayed();
+        return lastNameErrorMessage.isDisplayed();
     }
 
     public String getLastNameErrorMessage(){
-        return driver.findElement(lastNameErrorMessage).getText();
+        return lastNameErrorMessage.getText();
     }
 
     public boolean isEmailDisplayed(){
-        return driver.findElement(emailErrorMessage).isDisplayed();
+        return emailErrorMessage.isDisplayed();
     }
     public String getEmailErrorMessage(){
-        return driver.findElement(emailErrorMessage).getText();
+        return emailErrorMessage.getText();
     }
 
     public boolean isInstructionHeaderDisplayed(){
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(instructionHeader)).isDisplayed();
+        return wait.until(ExpectedConditions.visibilityOf(instructionHeader)).isDisplayed();
     }
     public String getInstructionHeaderErrorMessage(){
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(instructionHeader)).getText();
+        return wait.until(ExpectedConditions.visibilityOf(instructionHeader)).getText();
     }
     public boolean isInstructionDescriptionDisplayed(){
-        return driver.findElement(instructionDescription).isDisplayed();
+        return instructionDescription.isDisplayed();
     }
     public String getInstructionDescriptionErrorMessage(){
-        return driver.findElement(instructionDescription).getText();
+        return instructionDescription.getText();
     }
 }

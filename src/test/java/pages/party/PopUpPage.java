@@ -2,24 +2,35 @@ package pages.party;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.common.BasePage;
 
 import java.time.Duration;
 
 public class PopUpPage extends BasePage {
+
+  final String CLOSE_POPUP = "popup-widget5912-close-icon";
+  final String POPUP_ELEMENT = "popup-widget5912";
+
+  @FindBy (id = CLOSE_POPUP)
+  private WebElement closeButton;
+  @FindBy (id = POPUP_ELEMENT)
+  private WebElement popUpElement;
+
     public PopUpPage(WebDriver driver) {
         super(driver);
         new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(d -> d.findElement(By.id("popup-widget5912")));
+                .until(d -> d.findElement(By.id(POPUP_ELEMENT)));
     }
 
     public void clickCloseButton() {
-        driver.findElement(By.id("popup-widget5912-close-icon")).click();
+        closeButton.click();
     }
 
     public boolean isPopUpPresent() {
-        return driver.findElement(By.id("popup-widget5912")).isDisplayed();
+        return popUpElement.isDisplayed();
     }
 
 }
