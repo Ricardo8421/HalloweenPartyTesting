@@ -1,5 +1,7 @@
 package testcases.common;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import pages.party.config.ConfigReader;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -23,6 +25,7 @@ import org.testng.annotations.*;
 
 public class BaseTest {
     private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+    protected static final Logger log = LogManager.getLogger(BaseTest.class);
 
     @BeforeSuite (alwaysRun = true)
     @Parameters({"browser"})
@@ -89,13 +92,10 @@ public class BaseTest {
             String screenshotFileName = testName + "_" + failureTimeString + ".png";
 
             try{
-                FileUtils.copyFile(imgFile, new File("target/artifacts/screenshots/" + screenshotFileName));
-
-                // TODO: Log successful screenshot save
-                System.out.println("Guardó la captura en como nombre " + screenshotFileName);
+                FileUtils.copyFile(imgFile, new File("target/artifacts/screenshots" + screenshotFileName));
+                log.info("The screenshot saved with the name " + screenshotFileName);
             }catch(IOException ex){
-                // TODO: Log failure to save a screenshot
-                System.out.println("No guardo nadota");
+                log.error("An error has occurred while saving a screenshot:" + ex.getMessage());
             }
         }
     }
