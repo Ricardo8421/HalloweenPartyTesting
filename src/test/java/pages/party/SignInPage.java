@@ -1,12 +1,12 @@
 package pages.party;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.common.BasePage;
+import pages.party.config.ConfigReader;
 
 import java.time.Duration;
 
@@ -40,7 +40,8 @@ public class SignInPage extends BasePage {
     }
 
     public void navigateToSignIn() {
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        int waitSeconds = Integer.parseInt(ConfigReader.getProperty("implicit.wait"));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(waitSeconds));
         sessionIcon.click();
 
         wait.until(ExpectedConditions.elementToBeClickable(signInLink));

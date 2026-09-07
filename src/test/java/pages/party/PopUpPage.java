@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.common.BasePage;
+import pages.party.config.ConfigReader;
 
 import java.time.Duration;
 
@@ -21,7 +22,8 @@ public class PopUpPage extends BasePage {
 
     public PopUpPage(WebDriver driver) {
         super(driver);
-        new WebDriverWait(driver, Duration.ofSeconds(10))
+        int waitSeconds = Integer.parseInt(ConfigReader.getProperty("implicit.wait"));
+        new WebDriverWait(driver, Duration.ofSeconds(waitSeconds))
                 .until(d -> d.findElement(By.id(POPUP_ELEMENT)));
     }
 

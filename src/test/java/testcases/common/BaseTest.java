@@ -1,5 +1,6 @@
 package testcases.common;
 
+import pages.party.config.ConfigReader;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,6 +17,8 @@ public class BaseTest {
     @BeforeSuite
     @Parameters({"browser"})
     public void setUp(@Optional("firefox") String xmlBrowser) {
+        ConfigReader.initializeConfig();
+
         String browser = System.getProperty("browser", xmlBrowser).toLowerCase();
         WebDriver localDriver;
 
@@ -44,7 +47,7 @@ public class BaseTest {
         }
 
         localDriver.manage().window().maximize();
-        localDriver.get("https://candymapper.com/");
+        localDriver.get(ConfigReader.getProperty("base.url"));
         this.driver.set(localDriver);
     }
 
@@ -62,7 +65,8 @@ public class BaseTest {
 
     @AfterMethod
     public void delay() throws InterruptedException {
-        Thread.sleep(500);
+        int waitMiliseconds = Integer.parseInt(ConfigReader.getProperty("explicit.wait"));
+        Thread.sleep(waitMiliseconds);
     }
 
 }

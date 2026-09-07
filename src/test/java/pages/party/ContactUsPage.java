@@ -3,7 +3,6 @@ package pages.party;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.common.BasePage;
 
 import java.time.Duration;

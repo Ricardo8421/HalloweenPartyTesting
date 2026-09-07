@@ -5,6 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.common.BasePage;
+import pages.party.config.ConfigReader;
 
 import java.time.Duration;
 
@@ -42,7 +43,8 @@ public class TwoFactorAuthenticationPage extends BasePage {
     }
 
     public void navigateTo2FAPage() {
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        int waitSeconds = Integer.parseInt(ConfigReader.getProperty("implicit.wait"));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(waitSeconds));
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(":2.container"));
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath(NO_AUTO_POPUP_BUTTON_XPATH))).click();
         driver.switchTo().parentFrame();

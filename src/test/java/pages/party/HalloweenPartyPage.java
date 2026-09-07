@@ -8,8 +8,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import pages.common.BasePage;
+import pages.party.config.ConfigReader;
 
 import java.time.Duration;
 import java.util.List;
@@ -65,7 +65,8 @@ public class HalloweenPartyPage extends BasePage {
     }
 
     public void navigateToHalloweenPartyPage() {
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        int waitSeconds = Integer.parseInt(ConfigReader.getProperty("implicit.wait"));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(waitSeconds));
         driver.get("https://candymapper.com/");
 
         if (halloweenLink.isDisplayed()) {
