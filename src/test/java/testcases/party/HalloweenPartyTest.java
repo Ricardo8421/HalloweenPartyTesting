@@ -20,7 +20,7 @@ public class HalloweenPartyTest extends BaseTest {
     final String DESCRIPTION_TEXT_2 = "Thank you for finding this bug! ";
     final String DESCRIPTION_TEXT_3 = "The Jira ticket has been submitted via temporal vortex and fixed in CandyMapperR2.com";
 
-    @Test (groups = {"smoke"})
+    @Test (groups = {"regression"})
     public void testHostZombieParty() {
         log.info("Starting test: testHostZombieParty");
         halloweenPartyPage = new HalloweenPartyPage(getDriver());
@@ -53,7 +53,7 @@ public class HalloweenPartyTest extends BaseTest {
         halloweenPartyPage.verifyDropDown();
     }
 
-    @Test (groups = {"smoke"})
+    @Test (groups = {"regression"})
     public void testAttendZombieton(){
         log.info("Starting test: testAttendZombieton");
         halloweenPartyPage = new HalloweenPartyPage(getDriver());

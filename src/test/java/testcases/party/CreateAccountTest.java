@@ -1,5 +1,6 @@
 package testcases.party;
 
+import models.UserAccount;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
@@ -18,60 +19,70 @@ public class CreateAccountTest extends BaseTest {
 
     CreateAccountPage createAccountPage;
 
-    @Test (groups = {"smoke"})
+    @Test (groups = {"regression"})
     public void testEmptyFirstName(){
         log.info("Starting test: testEmptyFirstName");
         createAccountPage = new CreateAccountPage(getDriver());
-        log.warn("Triggering validation: Passing null for first name");
-        createAccountPage.sendCreateAccountFormWithValues(null, "Alcachofa", "alcachofas@comida.com", null);
+        log.warn("Triggering validation: Passing null for first name via POJO");
+
+        UserAccount user = new UserAccount(null, "Alcachofa", "alcachofas@comida.com", null);
+        createAccountPage.sendCreateAccountFormWithValues(user);
 
         log.info("Asserting first name error message");
         Assert.assertTrue(createAccountPage.isFirstNameDisplayed());
         Assert.assertEquals(createAccountPage.getFirstNameErrorMessage(), FIRSTNAME_ERROR_MESSAGE);
     }
 
-    @Test (groups = {"smoke"})
+    @Test (groups = {"regression"})
     public void testEmptyLastName(){
         log.info("Starting test: testEmptyLastName");
         createAccountPage = new CreateAccountPage(getDriver());
-        log.warn("Triggering validation: Passing null for last name");
-        createAccountPage.sendCreateAccountFormWithValues("Juanito", null, "alcachofas@comida.com", null);
+        log.warn("Triggering validation: Passing null for last name via POJO");
+
+        UserAccount user = new UserAccount("Juanito", null, "alcachofas@comida.com", null);
+        createAccountPage.sendCreateAccountFormWithValues(user);
 
         log.info("Asserting last name error message");
         Assert.assertTrue(createAccountPage.isLastNameDisplayed());
         Assert.assertEquals(createAccountPage.getLastNameErrorMessage(), LASTNAME_ERROR_MESSAGE);
     }
 
-    @Test (groups = {"smoke"})
+    @Test (groups = {"regression"})
     public void testEmptyEmail(){
         log.info("Starting test: testEmptyEmail");
         createAccountPage = new CreateAccountPage(getDriver());
-        log.warn("Triggering validation: Passing null for email");
-        createAccountPage.sendCreateAccountFormWithValues("Juanito", "Alcachofa", null, null);
+        log.warn("Triggering validation: Passing null for email via POJO");
+
+        UserAccount user = new UserAccount("Juanito", "Alcachofa", null, null);
+        createAccountPage.sendCreateAccountFormWithValues(user);
 
         log.info("Asserting email error message");
         Assert.assertTrue(createAccountPage.isEmailDisplayed());
         Assert.assertEquals(createAccountPage.getEmailErrorMessage(), EMAIL_ERROR_MESSAGE);
     }
 
-    @Test (groups = {"smoke"})
+    @Test (groups = {"regression"})
     public void testIncorrectEmail(){
         log.info("Starting test: testIncorrectEmail");
         createAccountPage = new CreateAccountPage(getDriver());
-        log.debug("Injecting malformed email string");
-        createAccountPage.sendCreateAccountFormWithValues("Juanito", "Alcachofa", "Alcachofas y más S.A. de C.V.", null);
+        log.debug("Injecting malformed email string via POJO");
+
+        UserAccount user = new UserAccount("Juanito", "Alcachofa", "Alcachofas y más S.A. de C.V.", null);
+        createAccountPage.sendCreateAccountFormWithValues(user);
 
         Assert.assertTrue(createAccountPage.isEmailDisplayed());
         Assert.assertEquals(createAccountPage.getEmailErrorMessage(), EMAIL_ERROR_MESSAGE);
     }
 
-    @Test (groups = {"smoke"})
+    @Test (groups = {"regression"})
     public void testCreateAccountWithoutPhone(){
         log.info("Starting test: testCreateAccountWithoutPhone");
         try {
             createAccountPage = new CreateAccountPage(getDriver());
-            log.debug("Submitting valid account data without phone number");
-            createAccountPage.sendCreateAccountFormWithValues("Juanito", "Alcachofa", "alcachofas@comida.com", null);
+            log.debug("Submitting valid account data without phone number via POJO");
+
+            UserAccount user = new UserAccount("Juanito", "Alcachofa", "alcachofas@comida.com", null);
+            createAccountPage.sendCreateAccountFormWithValues(user);
 
             log.info("Asserting instruction header and description");
             Assert.assertTrue(createAccountPage.isInstructionHeaderDisplayed());
@@ -88,8 +99,10 @@ public class CreateAccountTest extends BaseTest {
     public void testCreateAccountWithPhone(){
         log.info("Starting test: testCreateAccountWithPhone");
         createAccountPage = new CreateAccountPage(getDriver());
-        log.debug("Submitting valid account data including phone number");
-        createAccountPage.sendCreateAccountFormWithValues("Juanito", "Alcachofa", "alcachofas@comida.com", "5512345678");
+        log.debug("Submitting valid account data including phone number via POJO");
+
+        UserAccount user = new UserAccount("Juanito", "Alcachofa", "alcachofas@comida.com", "5512345678");
+        createAccountPage.sendCreateAccountFormWithValues(user);
 
         Assert.assertTrue(createAccountPage.isInstructionHeaderDisplayed());
         Assert.assertTrue(createAccountPage.isInstructionDescriptionDisplayed());

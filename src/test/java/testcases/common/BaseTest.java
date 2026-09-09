@@ -76,6 +76,7 @@ public class BaseTest {
         }
     }
 
+    //TODO: Test failure for screenshot
     @AfterMethod(alwaysRun = true)
     public void checkFailure(ITestResult result) throws InterruptedException {
         // DEBUG
@@ -92,12 +93,11 @@ public class BaseTest {
             String screenshotFileName = testName + "_" + failureTimeString + ".png";
 
             try{
-                FileUtils.copyFile(imgFile, new File("target/artifacts/screenshots" + screenshotFileName));
+                FileUtils.copyFile(imgFile, new File("test/reports/screenshots" + screenshotFileName));
                 log.info("The screenshot saved with the name " + screenshotFileName);
             }catch(IOException ex){
                 log.error("An error has occurred while saving a screenshot:" + ex.getMessage());
             }
         }
     }
-
 }

@@ -17,7 +17,7 @@ public class ConfigReader {
         try(InputStream input = new FileInputStream(path)){
             properties.load(input);
         }catch(IOException ex){
-            throw new RuntimeException("No se pudo cargar el archivo de configuración");
+            throw new RuntimeException("The configuration file could not be loaded.");
         }
     }
 

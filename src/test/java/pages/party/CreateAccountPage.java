@@ -1,5 +1,6 @@
 package pages.party;
 
+import models.UserAccount;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import pages.party.config.ConfigReader;
@@ -57,6 +58,15 @@ public class CreateAccountPage extends BasePage {
         super(driver);
         log.info("Initializing CreateAccountPage");
         navigateContactUsPage();
+    }
+
+    public void sendCreateAccountFormWithValues(UserAccount userAccount) {
+        sendCreateAccountFormWithValues(
+                userAccount.getFirstName(),
+                userAccount.getLastName(),
+                userAccount.getEmail(),
+                userAccount.getPhone()
+        );
     }
 
     public void navigateContactUsPage() {

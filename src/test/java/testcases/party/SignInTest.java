@@ -16,7 +16,7 @@ public class SignInTest extends BaseTest {
     final String EMAIL = "r15mez888@gmail.com";
     SignInPage signInPage;
 
-    @Test (groups = {"smoke"})
+    @Test (groups = {"regression"})
     public void testEmptyEmail(){
         log.info("Starting test: testEmptyEmail");
         signInPage = new SignInPage(getDriver());
@@ -27,7 +27,7 @@ public class SignInTest extends BaseTest {
         Assert.assertEquals(signInPage.getErrorMessage(), EMAIL_ERROR_MESSAGE);
     }
 
-    @Test (groups = {"smoke"})
+    @Test (groups = {"regression"})
     public void testIncorrectEmail(){
         log.info("Starting test: testIncorrectEmail");
         signInPage = new SignInPage(getDriver());
@@ -38,7 +38,7 @@ public class SignInTest extends BaseTest {
         Assert.assertEquals(signInPage.getErrorMessage(), EMAIL_ERROR_MESSAGE);
     }
 
-    @Test (groups = {"smoke"})
+    @Test (groups = {"regression"})
     public void testEmptyPassword(){
         log.info("Starting test: testEmptyPassword");
         signInPage = new SignInPage(getDriver());
@@ -49,7 +49,7 @@ public class SignInTest extends BaseTest {
         Assert.assertEquals(signInPage.getErrorMessage(),PASSWORD_ERROR_MESSAGE);
     }
 
-    @Test (groups = {"smoke"})
+    @Test (groups = {"regression"})
     public void testIncorrectCredentials(){
         log.info("Starting test: testIncorrectCredentials");
         try {

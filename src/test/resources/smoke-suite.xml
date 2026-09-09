@@ -8,10 +8,8 @@
         </groups>
         <classes>
             <class name="testcases.party.PopUpTest"/>
-            <class name="testcases.party.ContactUsTest"/>
             <class name="testcases.party.CreateAccountTest"/>
             <class name="testcases.party.SignInTest"/>
-            <class name="testcases.party.TwoFactorAuthenticationTest"/>
             <class name="testcases.party.HalloweenPartyTest"/>
         </classes>
     </test>
