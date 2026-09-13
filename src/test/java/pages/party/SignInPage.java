@@ -50,11 +50,11 @@ public class SignInPage extends BasePage {
         wait = new WebDriverWait(driver, Duration.ofSeconds(waitSeconds));
 
         log.debug("Clicking session icon");
-        sessionIcon.click();
+        click(sessionIcon, "Session Icon");
 
         wait.until(ExpectedConditions.elementToBeClickable(signInLink));
         log.debug("Clicking Sign In link");
-        signInLink.click();
+        click(signInLink, "Sign In Link");
     }
 
     public void sendSignInFormWithValues(String email, String password) {
@@ -64,46 +64,46 @@ public class SignInPage extends BasePage {
 
         if (email != null) {
             log.debug("Entering email value into input box");
-            emailInput.sendKeys(email);
+            sendKeys(emailInput, email, "Email Input");
         } else {
             log.warn("Email parameter passed is null");
         }
 
         if (password != null) {
             log.debug("Entering password value (masked for security)");
-            passwordInput.sendKeys(password);
+            sendKeys(passwordInput, password, "Password Input");
         } else {
             log.warn("Password parameter passed is null");
         }
 
         log.info("Clicking Sign In submit button");
-        signInButton.click();
+        click(signInButton, "Sign In Button");
     }
 
     public boolean isDisplayedErrorMessage() {
         log.info("Checking if Sign In error message is displayed");
-        boolean isDisplayed = errorMessage.isDisplayed();
+        boolean isDisplayed = isDisplayed(errorMessage, "Error Message");
         log.debug("Error message display status: {}", isDisplayed);
         return isDisplayed;
     }
 
     public String getErrorMessage() {
         log.info("Retrieving Sign In error message text");
-        String text = errorMessage.getText();
+        String text = getText(errorMessage, "Error Message");
         log.debug("Error message text: '{}'", text);
         return text;
     }
 
     public boolean isDisplayedSuccessMessage() {
         log.info("Verifying successful Sign In email banner visibility");
-        boolean isDisplayed = wait.until(ExpectedConditions.visibilityOf(signedInEmail)).isDisplayed();
+        boolean isDisplayed = isDisplayed(wait.until(ExpectedConditions.visibilityOf(signedInEmail)), "Signed In Email");
         log.debug("Success message banner visibility status: {}", isDisplayed);
         return isDisplayed;
     }
 
     public String getSuccessMessage() {
         log.info("Fetching signed-in user email text");
-        String text = wait.until(ExpectedConditions.visibilityOf(signedInEmail)).getText();
+        String text = getText(wait.until(ExpectedConditions.visibilityOf(signedInEmail)), "Signed In Email");
         log.debug("Signed-in user email text: '{}'", text);
         return text;
     }

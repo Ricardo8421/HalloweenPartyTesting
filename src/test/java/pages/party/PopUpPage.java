@@ -35,13 +35,13 @@ public class PopUpPage extends BasePage {
 
     public void clickCloseButton() {
         log.info("Clicking popup close button");
-        closeButton.click();
+        click(closeButton, "Close Button");
         log.debug("Popup close button clicked");
     }
 
     public boolean isPopUpPresent() {
         log.info("Verifying if popup element is currently displayed");
-        boolean isDisplayed = popUpElement.isDisplayed();
+        boolean isDisplayed = isDisplayed(popUpElement, "Popup Element");
         log.debug("Popup display status: {}", isDisplayed);
         return isDisplayed;
     }

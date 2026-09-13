@@ -50,7 +50,7 @@ public class ContactUsPage extends BasePage {
     public boolean isErrorElementEmail() {
         log.info("Checking if email error element is displayed");
         wait.until(ExpectedConditions.visibilityOf(emailMessageError));
-        boolean isDisplayed = emailMessageError.isDisplayed();
+        boolean isDisplayed = isDisplayed(emailMessageError, "Email Message Error");
         log.debug("Email error element visibility status: {}", isDisplayed);
         return isDisplayed;
     }
@@ -58,7 +58,7 @@ public class ContactUsPage extends BasePage {
     public String getErrorMessageEmail() {
         log.info("Fetching email error message text");
         wait.until(ExpectedConditions.visibilityOf(emailMessageError));
-        String errorText = emailMessageError.getText();
+        String errorText = getText(emailMessageError, "Error Text");
         log.debug("Retrieved email error message: '{}'", errorText);
         return errorText;
     }
@@ -68,7 +68,7 @@ public class ContactUsPage extends BasePage {
         input = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
         input.clear();
         if (value != null) {
-            input.sendKeys(value);
+            sendKeys(input, value, "Input");
         }
     }
 
@@ -123,7 +123,7 @@ public class ContactUsPage extends BasePage {
     public boolean isSuccessElementEmail() {
         log.info("Verifying if submission success element is displayed");
         wait.until(ExpectedConditions.visibilityOf(successElement));
-        boolean isDisplayed = successElement.isDisplayed();
+        boolean isDisplayed = isDisplayed(successElement, "Success Element");
         log.debug("Success element visibility status: {}", isDisplayed);
         return isDisplayed;
     }
@@ -131,7 +131,7 @@ public class ContactUsPage extends BasePage {
     public String getSuccessMessage() {
         log.info("Retrieving submission success message text");
         wait.until(ExpectedConditions.elementToBeClickable(successMessageElement));
-        String successText = successMessageElement.getText();
+        String successText = getText(successMessageElement, "Success Message Element");
         log.debug("Retrieved success message text: '{}'", successText);
         return successText;
     }

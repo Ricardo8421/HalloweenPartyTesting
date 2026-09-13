@@ -56,22 +56,22 @@ public class TwoFactorAuthenticationPage extends BasePage {
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(":2.container"));
 
         log.debug("Dismissing auto popup");
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(NO_AUTO_POPUP_BUTTON_XPATH))).click();
+        click(wait.until(ExpectedConditions.elementToBeClickable(By.xpath(NO_AUTO_POPUP_BUTTON_XPATH))), "No Auto Popup Button");
         driver.switchTo().parentFrame();
 
         log.debug("Opening 'More' navigation dropdown menu");
-        wait.until(ExpectedConditions.elementToBeClickable(moreDropdown)).click();
+        click(wait.until(ExpectedConditions.elementToBeClickable(moreDropdown)), "More Dropdown");
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);", expectedElement);
 
         try {
             log.debug("Attempting to click 2FA link item");
-            wait.until(ExpectedConditions.elementToBeClickable(expectedElement)).click();
+            click(wait.until(ExpectedConditions.elementToBeClickable(expectedElement)), "Expected Element");
         } catch (ElementClickInterceptedException e) {
             log.warn("Click intercepted on 2FA link element. Switching to default content to retry click.", e);
             driver.switchTo().defaultContent();
-            wait.until(ExpectedConditions.elementToBeClickable(expectedElement)).click();
+            click(wait.until(ExpectedConditions.elementToBeClickable(expectedElement)), "Expected Element");
         }
     }
 
@@ -83,13 +83,13 @@ public class TwoFactorAuthenticationPage extends BasePage {
 
         if (email != null) {
             log.debug("Entering email into 2FA input box");
-            emailInput.sendKeys(email);
+            sendKeys(emailInput, email, "Email Input");
         } else {
             log.warn("Email parameter passed to sendCode is null");
         }
 
         log.debug("Clicking Send Code button");
-        wait.until(ExpectedConditions.elementToBeClickable(sendCodeButton)).click();
+        click(wait.until(ExpectedConditions.elementToBeClickable(sendCodeButton)), "Send Code Button");
         driver.switchTo().parentFrame();
     }
 
@@ -100,20 +100,20 @@ public class TwoFactorAuthenticationPage extends BasePage {
 
         if (code != null) {
             log.debug("Entering code into verification input box");
-            codeInput.sendKeys(code);
+            sendKeys(codeInput, code, "Code Input");
         } else {
             log.warn("Code parameter passed to verifyCode is null");
         }
 
         log.debug("Clicking Verify Code button");
-        wait.until(ExpectedConditions.elementToBeClickable(verifyCodeButton)).click();
+        click(wait.until(ExpectedConditions.elementToBeClickable(verifyCodeButton)), "Verify Code Button");
         driver.switchTo().parentFrame();
     }
 
     public String findCode() {
         log.info("Extracting generated 2FA verification code from message");
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath(CONTENT_XPATH)));
-        String code = codeMessage.getText().substring(23, 29);
+        String code = getText(codeMessage, "Code Message").substring(23, 29);
         log.debug("Extracted verification code: '{}'", code);
         driver.switchTo().parentFrame();
         return code;
@@ -134,7 +134,7 @@ public class TwoFactorAuthenticationPage extends BasePage {
     public boolean isMessageDisplayed() {
         log.info("Checking display status of 2FA email/code message");
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath(CONTENT_XPATH)));
-        boolean messageDisplayed = wait.until(ExpectedConditions.visibilityOf(emailErrorMessage)).isDisplayed();
+        boolean messageDisplayed = isDisplayed(wait.until(ExpectedConditions.visibilityOf(emailErrorMessage)), "Email Error Message");
         log.debug("Message visibility status: {}", messageDisplayed);
         driver.switchTo().parentFrame();
         return messageDisplayed;
@@ -143,7 +143,7 @@ public class TwoFactorAuthenticationPage extends BasePage {
     public String getMessage() {
         log.info("Retrieving text content of 2FA message");
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath(CONTENT_XPATH)));
-        String message = wait.until(ExpectedConditions.visibilityOf(emailErrorMessage)).getText();
+        String message = getText(wait.until(ExpectedConditions.visibilityOf(emailErrorMessage)), "Email Error Message");
         log.debug("Retrieved 2FA message: '{}'", message);
         driver.switchTo().parentFrame();
         return message;

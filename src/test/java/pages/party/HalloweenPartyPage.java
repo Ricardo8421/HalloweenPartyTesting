@@ -73,15 +73,15 @@ public class HalloweenPartyPage extends BasePage {
         wait = new WebDriverWait(driver, Duration.ofSeconds(waitSeconds));
         driver.get("https://candymapper.com/");
 
-        if (halloweenLink.isDisplayed()) {
+        if (isDisplayed(halloweenLink, "Halloween Link")) {
             log.debug("Halloween link directly visible. Clicking link.");
-            halloweenLink.click();
+            click(halloweenLink, "Halloweeen Link");
         } else {
             log.warn("Halloween link not directly visible. Expanding 'More' dropdown menu.");
             wait.until(ExpectedConditions.elementToBeClickable(moreDropdown));
-            moreDropdown.click();
+            click(moreDropdown, "More Dropdown");
             wait.until(ExpectedConditions.visibilityOf(halloweenLinkDrop));
-            halloweenLinkDrop.click();
+            click(halloweenLinkDrop, "Halloween Link Drop");
         }
     }
 
@@ -89,14 +89,14 @@ public class HalloweenPartyPage extends BasePage {
         log.info("Clicking party button with action text: '{}'", action);
         final String ACTION_PARTY_BUTTON = "//a[contains(text(), \"" + action + "\")]";
         actionPartyButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(ACTION_PARTY_BUTTON)));
-        actionPartyButton.click();
+        click(actionPartyButton, "Action Party Button");
     }
 
     public boolean isGuestSpanDisplayed() {
         log.info("Checking guest span element display status after switching to parent frame");
         driver.switchTo().parentFrame();
         wait.until(ExpectedConditions.visibilityOf(spanGuestElement));
-        boolean isDisplayed = spanGuestElement.isDisplayed();
+        boolean isDisplayed = isDisplayed(spanGuestElement, "Span Guest Element");
         log.debug("Guest span display status: {}", isDisplayed);
         return isDisplayed;
     }
@@ -104,7 +104,7 @@ public class HalloweenPartyPage extends BasePage {
     public String getGuestSpanName() {
         log.info("Fetching guest span text");
         wait.until(ExpectedConditions.visibilityOf(spanGuestElement));
-        String text = spanGuestElement.getText();
+        String text = getText(spanGuestElement, "Span Guest Element");
         log.debug("Retrieved guest span text: '{}'", text);
         return text;
     }
@@ -124,7 +124,7 @@ public class HalloweenPartyPage extends BasePage {
         log.info("Switching to 'iframe-06' to check guest number element display");
         driver.switchTo().frame("iframe-06");
         wait.until(ExpectedConditions.visibilityOf(numberGuestElement));
-        boolean isDisplayed = numberGuestElement.isDisplayed();
+        boolean isDisplayed = isDisplayed(numberGuestElement, "Number Guest Element");
         log.debug("Number guest display status: {}", isDisplayed);
         return isDisplayed;
     }
@@ -132,7 +132,7 @@ public class HalloweenPartyPage extends BasePage {
     public String getNumberGuestText() {
         log.info("Retrieving guest number text");
         wait.until(ExpectedConditions.visibilityOf(numberGuestElement));
-        String text = numberGuestElement.getText().trim();
+        String text = getText(numberGuestElement, "Number Guest Element").trim();
         log.debug("Guest number text: '{}'", text);
         return text;
     }
@@ -144,7 +144,7 @@ public class HalloweenPartyPage extends BasePage {
         List<WebElement> options = dropDown.getOptions();
         log.debug("Found {} options in guest dropdown", options.size());
         options.forEach(option -> {
-            String val = option.getText().trim();
+            String val = getText(option, "Option").trim();
             log.debug("Selecting dropdown option: '{}'", val);
             dropDown.selectByValue(val);
         });
@@ -154,7 +154,7 @@ public class HalloweenPartyPage extends BasePage {
         log.info("Scrolling into view and checking image display");
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);", image);
-        boolean isDisplayed = image.isDisplayed();
+        boolean isDisplayed = isDisplayed(image, "Image");
         log.debug("Image display status: {}", isDisplayed);
         return isDisplayed;
     }
@@ -162,7 +162,7 @@ public class HalloweenPartyPage extends BasePage {
     public boolean isErrorMessageDisplayed() {
         log.info("Checking error message display status");
         wait.until(ExpectedConditions.visibilityOf(errorMessageElement));
-        boolean isDisplayed = errorMessageElement.isDisplayed();
+        boolean isDisplayed = isDisplayed(errorMessageElement, "Error Message Element");
         log.debug("Error message display status: {}", isDisplayed);
         return isDisplayed;
     }
@@ -170,7 +170,7 @@ public class HalloweenPartyPage extends BasePage {
     public String getErrorMessage() {
         log.info("Retrieving error message text");
         wait.until(ExpectedConditions.visibilityOf(errorMessageElement));
-        String text = errorMessageElement.getText();
+        String text = getText(errorMessageElement, "Error Message Element");
         log.debug("Error message text: '{}'", text);
         return text;
     }
@@ -178,7 +178,7 @@ public class HalloweenPartyPage extends BasePage {
     public boolean isSubTitleErrorDisplayed() {
         log.info("Checking subtitle error display status");
         wait.until(ExpectedConditions.visibilityOf(subtitleElement));
-        boolean isDisplayed = subtitleElement.isDisplayed();
+        boolean isDisplayed = isDisplayed(subtitleElement, "Subtitle Element");
         log.debug("Subtitle error display status: {}", isDisplayed);
         return isDisplayed;
     }
@@ -186,7 +186,7 @@ public class HalloweenPartyPage extends BasePage {
     public String getSubTitleErrorText() {
         log.info("Retrieving subtitle error text");
         wait.until(ExpectedConditions.visibilityOf(subtitleElement));
-        String text = subtitleElement.getText();
+        String text = getText(subtitleElement, "Subtitle Element");
         log.debug("Subtitle error text: '{}'", text);
         return text;
     }
@@ -194,36 +194,36 @@ public class HalloweenPartyPage extends BasePage {
     public boolean isFirstParagraphDisplayed() {
         log.info("Verifying first paragraph display");
         wait.until(ExpectedConditions.visibilityOf(firstParagraph));
-        return firstParagraph.isDisplayed();
+        return isDisplayed(firstParagraph, "First Paragraph");
     }
 
     public String getFirstParagraphText() {
         log.info("Fetching first paragraph text");
         wait.until(ExpectedConditions.visibilityOf(firstParagraph));
-        return firstParagraph.getText();
+        return getText(firstParagraph, "First Paragraph");
     }
 
     public boolean isSecondParagraphDisplayed() {
         log.info("Verifying second paragraph display");
         wait.until(ExpectedConditions.visibilityOf(secondParagraph));
-        return secondParagraph.isDisplayed();
+        return isDisplayed(secondParagraph, "Second Paragraph");
     }
 
     public String getSecondParagraphText() {
         log.info("Fetching second paragraph text");
         wait.until(ExpectedConditions.visibilityOf(secondParagraph));
-        return secondParagraph.getText();
+        return getText(secondParagraph, "Second Paragraph");
     }
 
     public boolean isThirdParagraphDisplayed() {
         log.info("Verifying third paragraph display");
         wait.until(ExpectedConditions.visibilityOf(thirdParagraph));
-        return thirdParagraph.isDisplayed();
+        return isDisplayed(thirdParagraph, "Third Paragraph");
     }
 
     public String getThirdParagraphText() {
         log.info("Fetching third paragraph text");
         wait.until(ExpectedConditions.visibilityOf(thirdParagraph));
-        return thirdParagraph.getText();
+        return getText(thirdParagraph, "Third Paragraph");
     }
 }

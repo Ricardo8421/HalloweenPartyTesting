@@ -27,4 +27,12 @@ public abstract class BasePage {
     protected boolean isDisplayed(WebElement element, String elementName) {
         return new utils.CustomElementDecorator(element, elementName).isDisplayed();
     }
+
+    protected String getText(WebElement element, String elementName){
+        return new utils.CustomElementDecorator(element, elementName).getText();
+    }
+
+    protected void clear(WebElement element, String elementName){
+        new utils.CustomElementDecorator(element, elementName).clear();
+    }
 }

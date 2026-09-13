@@ -76,11 +76,11 @@ public class CreateAccountPage extends BasePage {
         wait = new WebDriverWait(driver, Duration.ofSeconds(waitSeconds));
 
         log.debug("Clicking session icon");
-        sessionIcon.click();
+        click(sessionIcon, "Session Icon");
 
         wait.until(ExpectedConditions.elementToBeClickable(createAccountLink));
         log.debug("Clicking Create Account link");
-        createAccountLink.click();
+        click(createAccountLink, "Create Account Link");
     }
 
     public void sendCreateAccountFormWithValues(String firstName, String lastName, String email, String phone) {
@@ -94,102 +94,102 @@ public class CreateAccountPage extends BasePage {
 
         if (firstName != null) {
             log.debug("Entering First Name: {}", firstName);
-            firstNameInput.sendKeys(firstName);
+            sendKeys(firstNameInput, firstName, "First Name Input");
         } else {
             log.warn("First Name parameter is null. Leaving field blank.");
         }
 
         if (lastName != null) {
             log.debug("Entering Last Name: {}", lastName);
-            lastNameInput.sendKeys(lastName);
+            sendKeys(lastNameInput, lastName, "Last Name Input");
         } else {
             log.warn("Last Name parameter is null. Leaving field blank.");
         }
 
         if (email != null) {
             log.debug("Entering Email: {}", email);
-            emailInput.sendKeys(email);
+            sendKeys(emailInput, email, "Email Input");
         } else {
             log.warn("Email parameter is null. Leaving field blank.");
         }
 
         if (phone != null) {
             log.debug("Entering Phone: {}", phone);
-            phoneInput.sendKeys(phone);
+            sendKeys(phoneInput, phone, "Phone Input");
         } else {
             log.warn("Phone parameter is null. Leaving field blank.");
         }
 
         log.info("Clicking Create Account button");
-        createButton.click();
+        click(createButton, "Create Button");
     }
 
     public boolean isFirstNameDisplayed() {
         log.info("Checking First Name error message visibility");
-        boolean isDisplayed = firstNameErrorMessage.isDisplayed();
+        boolean isDisplayed = isDisplayed(firstNameErrorMessage, "First Name Error Message");
         log.debug("First Name error visibility: {}", isDisplayed);
         return isDisplayed;
     }
 
     public String getFirstNameErrorMessage() {
         log.info("Fetching First Name error message text");
-        String text = firstNameErrorMessage.getText();
+        String text = getText(firstNameErrorMessage, "First Name Error Message");
         log.debug("First Name error message: '{}'", text);
         return text;
     }
 
     public boolean isLastNameDisplayed() {
         log.info("Checking Last Name error message visibility");
-        boolean isDisplayed = lastNameErrorMessage.isDisplayed();
+        boolean isDisplayed = isDisplayed(lastNameErrorMessage, "Last Name Error Message");
         log.debug("Last Name error visibility: {}", isDisplayed);
         return isDisplayed;
     }
 
     public String getLastNameErrorMessage() {
         log.info("Fetching Last Name error message text");
-        String text = lastNameErrorMessage.getText();
+        String text = getText(lastNameErrorMessage, "Last Name Error Message");
         log.debug("Last Name error message: '{}'", text);
         return text;
     }
 
     public boolean isEmailDisplayed() {
         log.info("Checking Email error message visibility");
-        boolean isDisplayed = emailErrorMessage.isDisplayed();
+        boolean isDisplayed = isDisplayed(emailErrorMessage, "Email Error Message");
         log.debug("Email error visibility: {}", isDisplayed);
         return isDisplayed;
     }
 
     public String getEmailErrorMessage() {
         log.info("Fetching Email error message text");
-        String text = emailErrorMessage.getText();
+        String text = getText(emailErrorMessage, "Email Error Message");
         log.debug("Email error message: '{}'", text);
         return text;
     }
 
     public boolean isInstructionHeaderDisplayed() {
         log.info("Verifying instruction header display");
-        boolean isDisplayed = wait.until(ExpectedConditions.visibilityOf(instructionHeader)).isDisplayed();
+        boolean isDisplayed = isDisplayed(wait.until(ExpectedConditions.visibilityOf(instructionHeader)), "Instruction Header");
         log.debug("Instruction header visibility: {}", isDisplayed);
         return isDisplayed;
     }
 
     public String getInstructionHeaderErrorMessage() {
         log.info("Retrieving instruction header text");
-        String text = wait.until(ExpectedConditions.visibilityOf(instructionHeader)).getText();
+        String text = getText(wait.until(ExpectedConditions.visibilityOf(instructionHeader)), "Instruction Header");
         log.debug("Instruction header text: '{}'", text);
         return text;
     }
 
     public boolean isInstructionDescriptionDisplayed() {
         log.info("Checking instruction description display");
-        boolean isDisplayed = instructionDescription.isDisplayed();
+        boolean isDisplayed = isDisplayed(instructionDescription, "Instruction Description");
         log.debug("Instruction description visibility: {}", isDisplayed);
         return isDisplayed;
     }
 
     public String getInstructionDescriptionErrorMessage() {
         log.info("Retrieving instruction description text");
-        String text = instructionDescription.getText();
+        String text = getText(instructionDescription, "Instruction Description");
         log.debug("Instruction description text: '{}'", text);
         return text;
     }
