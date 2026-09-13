@@ -66,7 +66,7 @@ public class ContactUsPage extends BasePage {
     public void fillSingleElement(String xpath, String value) {
         log.debug("Attempting to fill element at xpath '{}' with value '{}'", xpath, value);
         input = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
-        input.clear();
+        clear(input, "Input");
         if (value != null) {
             sendKeys(input, value, "Input");
         }

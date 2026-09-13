@@ -79,7 +79,7 @@ public class TwoFactorAuthenticationPage extends BasePage {
         log.info("Requesting 2FA verification code for email: '{}'", email);
         driver.switchTo().parentFrame();
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath(CONTENT_XPATH)));
-        emailInput.clear();
+        clear(emailInput, "Email Input");
 
         if (email != null) {
             log.debug("Entering email into 2FA input box");
@@ -96,7 +96,7 @@ public class TwoFactorAuthenticationPage extends BasePage {
     public void verifyCode(String code) {
         log.info("Submitting verification code: '{}'", code);
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath(CONTENT_XPATH)));
-        codeInput.clear();
+        clear(codeInput, "Code Input");
 
         if (code != null) {
             log.debug("Entering code into verification input box");

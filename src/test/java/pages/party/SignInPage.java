@@ -59,8 +59,8 @@ public class SignInPage extends BasePage {
 
     public void sendSignInFormWithValues(String email, String password) {
         log.info("Attempting login with email: '{}'", email);
-        emailInput.clear();
-        passwordInput.clear();
+        clear(emailInput, "Email Input");
+        clear(passwordInput, "Password Input");
 
         if (email != null) {
             log.debug("Entering email value into input box");

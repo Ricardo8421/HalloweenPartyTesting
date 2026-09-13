@@ -87,10 +87,10 @@ public class CreateAccountPage extends BasePage {
         log.info("Submitting Create Account form with parameters -> FirstName: '{}', LastName: '{}', Email: '{}', Phone: '{}'",
                 firstName, lastName, email, phone);
 
-        firstNameInput.clear();
-        lastNameInput.clear();
-        emailInput.clear();
-        phoneInput.clear();
+        clear(firstNameInput, "First Name Input");
+        clear(lastNameInput, "Last Name Input");
+        clear(emailInput, "Email Input");
+        clear(phoneInput, "Phone Input");
 
         if (firstName != null) {
             log.debug("Entering First Name: {}", firstName);
