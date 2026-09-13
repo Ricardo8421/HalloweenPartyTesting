@@ -11,7 +11,7 @@ import testcases.common.BaseTest;
 public class CreateAccountTest extends BaseTest {
     private static final Logger log = LogManager.getLogger(CreateAccountTest.class);
 
-    final String FIRSTNAME_ERROR_MESSAGE = "Enter your first name.";
+    final String FIRSTNAME_ERROR_MESSAGE = "Enter your first name. ";
     final String LASTNAME_ERROR_MESSAGE = "Enter your last name.";
     final String EMAIL_ERROR_MESSAGE = "Enter a valid email address.";
     final String INSTRUCTION_HEADER_MESSAGE = "Check your email";
@@ -19,6 +19,7 @@ public class CreateAccountTest extends BaseTest {
 
     CreateAccountPage createAccountPage;
 
+    //This test always fails
     @Test (groups = {"regression"})
     public void testEmptyFirstName(){
         log.info("Starting test: testEmptyFirstName");

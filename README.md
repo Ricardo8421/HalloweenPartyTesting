@@ -29,28 +29,43 @@ This repository provides robust UI automation for key user flows on CandyMapper,
 ## Project Structure
 
 ```text
-src
-└── test
-    ├── java
-    │   └── party
-    │       ├── pages
-    │       │   ├── ContactUsPage.java
-    │       │   ├── CreateAccountPage.java
-    │       │   ├── HalloweenPartyPage.java
-    │       │   ├── PopUpPage.java
-    │       │   ├── SignInPage.java
-    │       │   └── TwoFactorAuthenticationPage.java
-    │       ├── BasePage.java
-    │       ├── BaseTest.java
-    │       ├── ContactUsTest.java
-    │       ├── CreateAccountTest.java
-    │       ├── HalloweenPartyTest.java
-    │       ├── PopUpTest.java
-    │       ├── SignInTest.java
-    │       └── TwoFactorAuthenticationTest.java
-    └── resources
-        └── testng.xml
-
+.
+├── logs/                         # Execution log files (Log4j)
+├── reports/                      # Here are the task evidence and the screenshots failures
+└── src/
+    ├── main/                     # Application source code
+    └── test/
+        ├── java/
+        │   ├── models/           # Data models / POJO classes
+        │   │   └── UserAccount.java
+        │   ├── pages/            # Page Object Model mappings
+        │   │   ├── common/       # Reusable base page classes
+        │   │   │   └── BasePage.java
+        │   │   └── party/        # WebElements and actions for the Party module
+        │   │       ├── config/
+        │   │       ├── ContactUsPage.java
+        │   │       ├── CreateAccountPage.java
+        │   │       ├── HalloweenPartyPage.java
+        │   │       ├── PopUpPage.java
+        │   │       ├── SignInPage.java
+        │   │       └── TwoFactorAuthenticationPage.java
+        │   └── testcases/        # Automated test suites (TestNG)
+        │       ├── common/       # Global test setup and teardown
+        │       │   └── BaseTest.java
+        │       └── party/        # Specific test cases for the Party module
+        │           ├── ContactUsTest.java
+        │           ├── CreateAccountTest.java
+        │           ├── HalloweenPartyTest.java
+        │           ├── PopUpTest.java
+        │           ├── SignInTest.java
+        │           └── TwoFactorAuthenticationTest.java
+        └── resources/            # Environment configurations and TestNG suite files
+            ├── env.dev.properties
+            ├── env.qa.properties
+            ├── log4j2.xml
+            ├── regression-suite.xml
+            ├── smoke-suite.xml
+            └── testng.xml
 ```
 
 ## Getting Started

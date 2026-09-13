@@ -1,0 +1,953 @@
+2026-09-08 22:38:12.555 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  /Users/yukinora/Downloads/SpecialitationJAVA/ProyectSeleniumWeb/HalloweenParty/selenium-web-driver/src/test/resources/smoke-suite.xml
+
+2026-09-08 22:38:12.995 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using geckodriver 0.37.1 (resolved driver for Firefox 155)
+2026-09-08 22:38:13.084 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as /Users/yukinora/.cache/selenium/geckodriver/mac64/0.37.1/geckodriver
+2026-09-08 22:38:18.396 [main] INFO  testcases.party.PopUpTest - Starting test: testPopUpClose
+2026-09-08 22:38:18.414 [main] INFO  pages.party.PopUpPage - Initializing PopUpPage and waiting for popup element presence
+2026-09-08 22:38:18.442 [main] INFO  pages.party.PopUpPage - PopUp element located successfully
+2026-09-08 22:38:18.442 [main] INFO  pages.party.PopUpPage - Clicking popup close button
+2026-09-08 22:38:18.589 [main] INFO  testcases.party.PopUpTest - Asserting that popup is no longer present
+2026-09-08 22:38:18.589 [main] INFO  pages.party.PopUpPage - Verifying if popup element is currently displayed
+2026-09-08 22:38:19.118 [main] INFO  testcases.party.CreateAccountTest - Starting test: testCreateAccountWithPhone
+2026-09-08 22:38:19.121 [main] INFO  pages.party.CreateAccountPage - Initializing CreateAccountPage
+2026-09-08 22:38:19.122 [main] INFO  pages.party.CreateAccountPage - Navigating to Create Account section
+2026-09-08 22:38:19.706 [main] INFO  pages.party.CreateAccountPage - Submitting Create Account form with parameters -> FirstName: 'Juanito', LastName: 'Alcachofa', Email: 'alcachofas@comida.com', Phone: '5512345678'
+2026-09-08 22:38:20.370 [main] INFO  pages.party.CreateAccountPage - Clicking Create Account button
+2026-09-08 22:38:20.456 [main] INFO  pages.party.CreateAccountPage - Verifying instruction header display
+2026-09-08 22:38:21.503 [main] INFO  pages.party.CreateAccountPage - Checking instruction description display
+2026-09-08 22:38:21.513 [main] INFO  pages.party.CreateAccountPage - Retrieving instruction header text
+2026-09-08 22:38:21.532 [main] INFO  pages.party.CreateAccountPage - Retrieving instruction description text
+2026-09-08 22:38:22.054 [main] INFO  testcases.party.SignInTest - Starting test: testSignIn
+2026-09-08 22:38:22.056 [main] INFO  pages.party.SignInPage - Initializing SignInPage
+2026-09-08 22:38:22.056 [main] INFO  pages.party.SignInPage - Navigating to Sign In page
+2026-09-08 22:38:22.669 [main] INFO  pages.party.SignInPage - Attempting login with email: 'r15mez888@gmail.com'
+2026-09-08 22:38:23.031 [main] INFO  pages.party.SignInPage - Clicking Sign In submit button
+2026-09-08 22:38:24.744 [main] INFO  testcases.party.SignInTest - Asserting successful login message
+2026-09-08 22:38:24.745 [main] INFO  pages.party.SignInPage - Verifying successful Sign In email banner visibility
+2026-09-08 22:38:25.269 [main] INFO  pages.party.SignInPage - Fetching signed-in user email text
+2026-09-08 22:38:25.790 [main] INFO  testcases.party.HalloweenPartyTest - Starting test: testAttendGhostville
+2026-09-08 22:38:25.793 [main] INFO  pages.party.HalloweenPartyPage - Initializing HalloweenPartyPage
+2026-09-08 22:38:25.793 [main] INFO  pages.party.HalloweenPartyPage - Navigating to Halloween Party Page
+2026-09-08 22:38:26.694 [main] INFO  pages.party.HalloweenPartyPage - Clicking party button with action text: 'I Am Attending A Party'
+2026-09-08 22:38:27.046 [main] INFO  pages.party.HalloweenPartyPage - Clicking party button with action text: 'Ghostville'
+2026-09-08 22:38:27.691 [main] INFO  pages.party.HalloweenPartyPage - Attempting to switch to guest iframe: '//*[@id='iframe-06']'
+2026-09-08 22:38:27.711 [main] INFO  pages.party.HalloweenPartyPage - Checking guest span element display status after switching to parent frame
+2026-09-08 22:38:27.729 [main] INFO  pages.party.HalloweenPartyPage - Fetching guest span text
+2026-09-08 22:38:27.745 [main] INFO  pages.party.HalloweenPartyPage - Switching to 'iframe-06' to check guest number element display
+2026-09-08 22:38:27.780 [main] INFO  pages.party.HalloweenPartyPage - Retrieving guest number text
+2026-09-08 22:38:27.794 [main] INFO  pages.party.HalloweenPartyPage - Verifying dropdown options in Halloween Party Page
+2026-09-08 22:38:28.495 [main] INFO  testcases.party.HalloweenPartyTest - Starting test: testAttendImScared
+2026-09-08 22:38:28.495 [main] INFO  pages.party.HalloweenPartyPage - Initializing HalloweenPartyPage
+2026-09-08 22:38:28.495 [main] INFO  pages.party.HalloweenPartyPage - Navigating to Halloween Party Page
+2026-09-08 22:38:29.183 [main] WARN  testcases.party.HalloweenPartyTest - Testing intended error path: 'I'm Scared, Let's Go Back!'
+2026-09-08 22:38:29.183 [main] INFO  pages.party.HalloweenPartyPage - Clicking party button with action text: 'I Am Attending A Party'
+2026-09-08 22:38:29.571 [main] INFO  pages.party.HalloweenPartyPage - Clicking party button with action text: 'I'm Scared, Let's Go Back!'
+2026-09-08 22:38:30.142 [main] INFO  testcases.party.HalloweenPartyTest - Verifying 404 Error page elements
+2026-09-08 22:38:30.142 [main] INFO  pages.party.HalloweenPartyPage - Checking error message display status
+2026-09-08 22:38:30.159 [main] INFO  pages.party.HalloweenPartyPage - Retrieving error message text
+2026-09-08 22:38:30.175 [main] INFO  pages.party.HalloweenPartyPage - Scrolling into view and checking image display
+2026-09-08 22:38:30.191 [main] INFO  pages.party.HalloweenPartyPage - Checking subtitle error display status
+2026-09-08 22:38:30.231 [main] INFO  pages.party.HalloweenPartyPage - Retrieving subtitle error text
+2026-09-08 22:38:30.249 [main] INFO  pages.party.HalloweenPartyPage - Verifying first paragraph display
+2026-09-08 22:38:30.264 [main] INFO  pages.party.HalloweenPartyPage - Fetching first paragraph text
+2026-09-08 22:38:30.279 [main] INFO  pages.party.HalloweenPartyPage - Verifying second paragraph display
+2026-09-08 22:38:30.296 [main] INFO  pages.party.HalloweenPartyPage - Fetching second paragraph text
+2026-09-08 22:38:30.311 [main] INFO  pages.party.HalloweenPartyPage - Verifying third paragraph display
+2026-09-08 22:38:30.325 [main] INFO  pages.party.HalloweenPartyPage - Fetching third paragraph text
+2026-09-08 22:38:30.850 [main] INFO  testcases.party.HalloweenPartyTest - Starting test: testHostGhostParty
+2026-09-08 22:38:30.851 [main] INFO  pages.party.HalloweenPartyPage - Initializing HalloweenPartyPage
+2026-09-08 22:38:30.851 [main] INFO  pages.party.HalloweenPartyPage - Navigating to Halloween Party Page
+2026-09-08 22:38:31.517 [main] INFO  pages.party.HalloweenPartyPage - Clicking party button with action text: 'I Am Hosting A Party'
+2026-09-08 22:38:32.094 [main] INFO  pages.party.HalloweenPartyPage - Clicking party button with action text: 'Ghosts'
+2026-09-08 22:38:32.437 [main] INFO  pages.party.HalloweenPartyPage - Attempting to switch to guest iframe: '//*[@id='iframe-06']'
+2026-09-08 22:38:32.441 [main] INFO  pages.party.HalloweenPartyPage - Checking guest span element display status after switching to parent frame
+2026-09-08 22:38:32.961 [main] INFO  pages.party.HalloweenPartyPage - Fetching guest span text
+2026-09-08 22:38:32.975 [main] INFO  pages.party.HalloweenPartyPage - Switching to 'iframe-06' to check guest number element display
+2026-09-08 22:38:32.994 [main] INFO  pages.party.HalloweenPartyPage - Retrieving guest number text
+2026-09-08 22:38:33.007 [main] INFO  pages.party.HalloweenPartyPage - Verifying dropdown options in Halloween Party Page
+2026-09-08 22:45:10.641 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using geckodriver 0.37.1 (resolved driver for Firefox 155)
+2026-09-08 22:45:10.702 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as /Users/yukinora/.cache/selenium/geckodriver/mac64/0.37.1/geckodriver
+2026-09-08 22:45:15.694 [main] INFO  testcases.party.PopUpTest - Starting test: testPopUpClose
+2026-09-08 22:45:15.707 [main] INFO  pages.party.PopUpPage - Initializing PopUpPage and waiting for popup element presence
+2026-09-08 22:45:15.734 [main] INFO  pages.party.PopUpPage - PopUp element located successfully
+2026-09-08 22:45:15.734 [main] INFO  pages.party.PopUpPage - Clicking popup close button
+2026-09-08 22:45:15.868 [main] INFO  testcases.party.PopUpTest - Asserting that popup is no longer present
+2026-09-08 22:45:15.869 [main] INFO  pages.party.PopUpPage - Verifying if popup element is currently displayed
+2026-09-08 22:45:16.409 [main] INFO  testcases.party.CreateAccountTest - Starting test: testCreateAccountWithPhone
+2026-09-08 22:45:16.413 [main] INFO  pages.party.CreateAccountPage - Initializing CreateAccountPage
+2026-09-08 22:45:16.413 [main] INFO  pages.party.CreateAccountPage - Navigating to Create Account section
+2026-09-08 22:45:16.999 [main] INFO  pages.party.CreateAccountPage - Submitting Create Account form with parameters -> FirstName: 'Juanito', LastName: 'Alcachofa', Email: 'alcachofas@comida.com', Phone: '5512345678'
+2026-09-08 22:45:17.627 [main] INFO  pages.party.CreateAccountPage - Clicking Create Account button
+2026-09-08 22:45:17.707 [main] INFO  pages.party.CreateAccountPage - Verifying instruction header display
+2026-09-08 22:45:19.271 [main] INFO  pages.party.CreateAccountPage - Checking instruction description display
+2026-09-08 22:45:19.280 [main] INFO  pages.party.CreateAccountPage - Retrieving instruction header text
+2026-09-08 22:45:19.297 [main] INFO  pages.party.CreateAccountPage - Retrieving instruction description text
+2026-09-08 22:45:19.815 [main] INFO  testcases.party.SignInTest - Starting test: testSignIn
+2026-09-08 22:45:19.818 [main] INFO  pages.party.SignInPage - Initializing SignInPage
+2026-09-08 22:45:19.818 [main] INFO  pages.party.SignInPage - Navigating to Sign In page
+2026-09-08 22:45:20.447 [main] INFO  pages.party.SignInPage - Attempting login with email: 'r15mez888@gmail.com'
+2026-09-08 22:45:20.963 [main] INFO  pages.party.SignInPage - Clicking Sign In submit button
+2026-09-08 22:45:22.154 [main] INFO  testcases.party.SignInTest - Asserting successful login message
+2026-09-08 22:45:22.155 [main] INFO  pages.party.SignInPage - Verifying successful Sign In email banner visibility
+2026-09-08 22:45:22.684 [main] INFO  pages.party.SignInPage - Fetching signed-in user email text
+2026-09-08 22:45:23.209 [main] INFO  testcases.party.HalloweenPartyTest - Starting test: testAttendGhostville
+2026-09-08 22:45:23.212 [main] INFO  pages.party.HalloweenPartyPage - Initializing HalloweenPartyPage
+2026-09-08 22:45:23.212 [main] INFO  pages.party.HalloweenPartyPage - Navigating to Halloween Party Page
+2026-09-08 22:45:23.997 [main] INFO  pages.party.HalloweenPartyPage - Clicking party button with action text: 'I Am Attending A Party'
+2026-09-08 22:45:24.417 [main] INFO  pages.party.HalloweenPartyPage - Clicking party button with action text: 'Ghostville'
+2026-09-08 22:45:24.776 [main] INFO  pages.party.HalloweenPartyPage - Attempting to switch to guest iframe: '//*[@id='iframe-06']'
+2026-09-08 22:45:24.790 [main] INFO  pages.party.HalloweenPartyPage - Checking guest span element display status after switching to parent frame
+2026-09-08 22:45:24.808 [main] INFO  pages.party.HalloweenPartyPage - Fetching guest span text
+2026-09-08 22:45:24.825 [main] INFO  pages.party.HalloweenPartyPage - Switching to 'iframe-06' to check guest number element display
+2026-09-08 22:45:24.860 [main] INFO  pages.party.HalloweenPartyPage - Retrieving guest number text
+2026-09-08 22:45:24.873 [main] INFO  pages.party.HalloweenPartyPage - Verifying dropdown options in Halloween Party Page
+2026-09-08 22:45:25.573 [main] INFO  testcases.party.HalloweenPartyTest - Starting test: testAttendImScared
+2026-09-08 22:45:25.574 [main] INFO  pages.party.HalloweenPartyPage - Initializing HalloweenPartyPage
+2026-09-08 22:45:25.575 [main] INFO  pages.party.HalloweenPartyPage - Navigating to Halloween Party Page
+2026-09-08 22:45:26.225 [main] WARN  testcases.party.HalloweenPartyTest - Testing intended error path: 'I'm Scared, Let's Go Back!'
+2026-09-08 22:45:26.225 [main] INFO  pages.party.HalloweenPartyPage - Clicking party button with action text: 'I Am Attending A Party'
+2026-09-08 22:45:26.550 [main] INFO  pages.party.HalloweenPartyPage - Clicking party button with action text: 'I'm Scared, Let's Go Back!'
+2026-09-08 22:45:26.955 [main] INFO  testcases.party.HalloweenPartyTest - Verifying 404 Error page elements
+2026-09-08 22:45:26.955 [main] INFO  pages.party.HalloweenPartyPage - Checking error message display status
+2026-09-08 22:45:26.970 [main] INFO  pages.party.HalloweenPartyPage - Retrieving error message text
+2026-09-08 22:45:26.994 [main] INFO  pages.party.HalloweenPartyPage - Scrolling into view and checking image display
+2026-09-08 22:45:27.008 [main] INFO  pages.party.HalloweenPartyPage - Checking subtitle error display status
+2026-09-08 22:45:27.023 [main] INFO  pages.party.HalloweenPartyPage - Retrieving subtitle error text
+2026-09-08 22:45:27.038 [main] INFO  pages.party.HalloweenPartyPage - Verifying first paragraph display
+2026-09-08 22:45:27.066 [main] INFO  pages.party.HalloweenPartyPage - Fetching first paragraph text
+2026-09-08 22:45:27.083 [main] INFO  pages.party.HalloweenPartyPage - Verifying second paragraph display
+2026-09-08 22:45:27.096 [main] INFO  pages.party.HalloweenPartyPage - Fetching second paragraph text
+2026-09-08 22:45:27.113 [main] INFO  pages.party.HalloweenPartyPage - Verifying third paragraph display
+2026-09-08 22:45:27.127 [main] INFO  pages.party.HalloweenPartyPage - Fetching third paragraph text
+2026-09-08 22:45:27.648 [main] INFO  testcases.party.HalloweenPartyTest - Starting test: testHostGhostParty
+2026-09-08 22:45:27.649 [main] INFO  pages.party.HalloweenPartyPage - Initializing HalloweenPartyPage
+2026-09-08 22:45:27.649 [main] INFO  pages.party.HalloweenPartyPage - Navigating to Halloween Party Page
+2026-09-08 22:45:28.335 [main] INFO  pages.party.HalloweenPartyPage - Clicking party button with action text: 'I Am Hosting A Party'
+2026-09-08 22:45:28.831 [main] INFO  pages.party.HalloweenPartyPage - Clicking party button with action text: 'Ghosts'
+2026-09-08 22:45:29.189 [main] INFO  pages.party.HalloweenPartyPage - Attempting to switch to guest iframe: '//*[@id='iframe-06']'
+2026-09-08 22:45:29.201 [main] INFO  pages.party.HalloweenPartyPage - Checking guest span element display status after switching to parent frame
+2026-09-08 22:45:29.222 [main] INFO  pages.party.HalloweenPartyPage - Fetching guest span text
+2026-09-08 22:45:29.236 [main] INFO  pages.party.HalloweenPartyPage - Switching to 'iframe-06' to check guest number element display
+2026-09-08 22:45:29.258 [main] INFO  pages.party.HalloweenPartyPage - Retrieving guest number text
+2026-09-08 22:45:29.282 [main] INFO  pages.party.HalloweenPartyPage - Verifying dropdown options in Halloween Party Page
+2026-09-08 22:51:34.653 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using geckodriver 0.37.1 (resolved driver for Firefox 155)
+2026-09-08 22:51:34.715 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as /Users/yukinora/.cache/selenium/geckodriver/mac64/0.37.1/geckodriver
+2026-09-08 22:52:19.009 [main] INFO  testcases.party.PopUpTest - Starting test: testPopUpClose
+2026-09-08 22:52:19.021 [main] INFO  pages.party.PopUpPage - Initializing PopUpPage and waiting for popup element presence
+2026-09-08 22:52:29.760 [main] INFO  testcases.party.ContactUsTest - Starting test: testSendEmptyEmail
+2026-09-08 22:52:29.761 [main] INFO  pages.party.ContactUsPage - Initializing ContactUsPage
+2026-09-08 22:52:29.761 [main] INFO  pages.party.ContactUsPage - Navigating and scrolling to Contact Us Form
+2026-09-08 22:52:41.475 [main] INFO  testcases.party.CreateAccountTest - Starting test: testCreateAccountWithoutPhone
+2026-09-08 22:52:41.479 [main] INFO  pages.party.CreateAccountPage - Initializing CreateAccountPage
+2026-09-08 22:52:41.479 [main] INFO  pages.party.CreateAccountPage - Navigating to Create Account section
+2026-09-08 22:52:41.482 [main] ERROR testcases.party.CreateAccountTest - Unexpected error occurred during testCreateAccountWithoutPhone
+org.openqa.selenium.NoSuchWindowException: Browsing context has been discarded
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '26.6.2', java.version: '25.0.4'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [53cd4fa1-54ff-43be-a3fd-5ade84988807, findElement {using=id, value=4}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 155.0.1, moz:accessibilityChecks: false, moz:buildID: 20260903215306, moz:geckodriverVersion: 0.37.1, moz:headless: false, moz:platformVersion: 25.6.0, moz:processID: 2516, moz:profile: /var/folders/c8/wv0l5_ln5zx..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
+Session ID: 53cd4fa1-54ff-43be-a3fd-5ade84988807
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:143) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:196) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:217) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:173) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:67) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:396) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:390) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69) ~[selenium-support-4.45.0.jar:?]
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38) ~[selenium-support-4.45.0.jar:?]
+	at jdk.proxy2/jdk.proxy2.$Proxy28.click(Unknown Source) ~[?:?]
+	at navigateCreateAccountPage(CreateAccountPage.java:79) ~[test-classes/:?]
+	at pages.party.CreateAccountPage.<init>(CreateAccountPage.java:60) ~[test-classes/:?]
+	at testcases.party.CreateAccountTest.testCreateAccountWithoutPhone(CreateAccountTest.java:82) [test-classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[?:?]
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134) [testng-7.12.0.jar:7.12.0]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:744) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestRunner.run(TestRunner.java:616) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.runSuites(TestNG.java:1112) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.run(TestNG.java:1079) [testng-7.12.0.jar:7.12.0]
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308) [surefire-testng-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71) [surefire-testng-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113) [surefire-testng-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385) [surefire-booter-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162) [surefire-booter-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507) [surefire-booter-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495) [surefire-booter-3.5.0.jar:3.5.0]
+2026-09-08 22:52:44.032 [main] INFO  testcases.party.SignInTest - Starting test: testEmptyEmail
+2026-09-08 22:52:44.034 [main] INFO  pages.party.SignInPage - Initializing SignInPage
+2026-09-08 22:52:44.034 [main] INFO  pages.party.SignInPage - Navigating to Sign In page
+2026-09-08 22:52:46.070 [main] INFO  testcases.party.TwoFactorAuthenticationTest - Starting test: test2FA (Happy Path)
+2026-09-08 22:52:46.074 [main] INFO  pages.party.TwoFactorAuthenticationPage - Initializing TwoFactorAuthenticationPage
+2026-09-08 22:52:46.074 [main] INFO  pages.party.TwoFactorAuthenticationPage - Navigating to 2FA Page
+2026-09-08 22:52:56.273 [main] ERROR testcases.party.TwoFactorAuthenticationTest - Unexpected error during 2FA test execution
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for frame with name or id ":2.container" to be available, but... .
+(tried for 10 seconds with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85) ~[selenium-support-4.45.0.jar:?]
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234) ~[selenium-support-4.45.0.jar:?]
+	at pages.party.TwoFactorAuthenticationPage.navigateTo2FAPage(TwoFactorAuthenticationPage.java:56) ~[test-classes/:?]
+	at pages.party.TwoFactorAuthenticationPage.<init>(TwoFactorAuthenticationPage.java:47) ~[test-classes/:?]
+	at testcases.party.TwoFactorAuthenticationTest.test2FA(TwoFactorAuthenticationTest.java:68) [test-classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[?:?]
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134) [testng-7.12.0.jar:7.12.0]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:744) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestRunner.run(TestRunner.java:616) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.runSuites(TestNG.java:1112) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.run(TestNG.java:1079) [testng-7.12.0.jar:7.12.0]
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308) [surefire-testng-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71) [surefire-testng-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113) [surefire-testng-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385) [surefire-booter-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162) [surefire-booter-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507) [surefire-booter-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495) [surefire-booter-3.5.0.jar:3.5.0]
+Caused by: org.openqa.selenium.NoSuchWindowException: Browsing context has been discarded
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '26.6.2', java.version: '25.0.4'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [53cd4fa1-54ff-43be-a3fd-5ade84988807, findElements {using=css selector, value=frame[name='\:2\.container'],iframe[name='\:2\.container']}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 155.0.1, moz:accessibilityChecks: false, moz:buildID: 20260903215306, moz:geckodriverVersion: 0.37.1, moz:headless: false, moz:platformVersion: 25.6.0, moz:processID: 2516, moz:profile: /var/folders/c8/wv0l5_ln5zx..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
+Session ID: 53cd4fa1-54ff-43be-a3fd-5ade84988807
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:143) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:196) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:217) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElements(ElementLocation.java:190) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.ElementLocation.findElements(ElementLocation.java:104) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:409) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:403) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.frame(RemoteWebDriver.java:1218) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.support.ui.ExpectedConditions$16.apply(ExpectedConditions.java:573) ~[selenium-support-4.45.0.jar:?]
+	at org.openqa.selenium.support.ui.ExpectedConditions$16.apply(ExpectedConditions.java:566) ~[selenium-support-4.45.0.jar:?]
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:210) ~[selenium-support-4.45.0.jar:?]
+	... 33 more
+2026-09-08 22:52:58.831 [main] INFO  testcases.party.HalloweenPartyTest - Starting test: testAttendZombieton
+2026-09-08 22:52:58.833 [main] INFO  pages.party.HalloweenPartyPage - Initializing HalloweenPartyPage
+2026-09-08 22:52:58.833 [main] INFO  pages.party.HalloweenPartyPage - Navigating to Halloween Party Page
+2026-09-08 22:58:19.460 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using geckodriver 0.37.1 (resolved driver for Firefox 155)
+2026-09-08 22:58:19.522 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as /Users/yukinora/.cache/selenium/geckodriver/mac64/0.37.1/geckodriver
+2026-09-08 22:58:25.063 [main] INFO  testcases.party.PopUpTest - Starting test: testPopUpClose
+2026-09-08 22:58:25.079 [main] INFO  pages.party.PopUpPage - Initializing PopUpPage and waiting for popup element presence
+2026-09-08 22:58:25.095 [main] INFO  pages.party.PopUpPage - PopUp element located successfully
+2026-09-08 22:58:25.095 [main] INFO  pages.party.PopUpPage - Clicking popup close button
+2026-09-08 22:58:25.169 [main] INFO  testcases.party.PopUpTest - Asserting that popup is no longer present
+2026-09-08 22:58:25.170 [main] INFO  pages.party.PopUpPage - Verifying if popup element is currently displayed
+2026-09-08 22:58:25.707 [main] INFO  testcases.party.ContactUsTest - Starting test: testSendEmptyEmail
+2026-09-08 22:58:25.708 [main] INFO  pages.party.ContactUsPage - Initializing ContactUsPage
+2026-09-08 22:58:25.708 [main] INFO  pages.party.ContactUsPage - Navigating and scrolling to Contact Us Form
+2026-09-08 22:58:25.721 [main] WARN  testcases.party.ContactUsTest - Executing negative test scenario: Sending empty email
+2026-09-08 22:58:25.722 [main] INFO  pages.party.ContactUsPage - Filling out Contact Us form for user: test test
+2026-09-08 22:58:26.036 [main] INFO  pages.party.ContactUsPage - Submitting Contact Us form via JavaScript click
+2026-09-08 22:58:27.049 [main] ERROR pages.party.ContactUsPage - Script timeout occurred while attempting to submit Contact Us form
+org.openqa.selenium.ScriptTimeoutException: Timed out after 1000 ms
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '26.6.2', java.version: '25.0.4'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [71e1909e-f06d-478b-8190-09a9970e870b, executeAsyncScript {args=[], script=document.querySelector('[data-aid="CONTACT_SUBMIT_BUTTON_REND"]').click();}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 155.0.1, moz:accessibilityChecks: false, moz:buildID: 20260903215306, moz:geckodriverVersion: 0.37.1, moz:headless: false, moz:platformVersion: 25.6.0, moz:processID: 2916, moz:profile: /var/folders/c8/wv0l5_ln5zx..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
+Session ID: 71e1909e-f06d-478b-8190-09a9970e870b
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:143) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:196) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:217) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.executeAsyncScript(RemoteWebDriver.java:513) ~[selenium-remote-driver-4.45.0.jar:?]
+	at pages.party.ContactUsPage.fillInformationContactUs(ContactUsPage.java:116) [test-classes/:?]
+	at testcases.party.ContactUsTest.testSendEmptyEmail(ContactUsTest.java:24) [test-classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[?:?]
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134) [testng-7.12.0.jar:7.12.0]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:744) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestRunner.run(TestRunner.java:616) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.runSuites(TestNG.java:1112) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.run(TestNG.java:1079) [testng-7.12.0.jar:7.12.0]
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308) [surefire-testng-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71) [surefire-testng-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113) [surefire-testng-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385) [surefire-booter-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162) [surefire-booter-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507) [surefire-booter-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495) [surefire-booter-3.5.0.jar:3.5.0]
+2026-09-08 22:58:27.057 [main] INFO  testcases.party.ContactUsTest - Verifying error element is displayed for empty email
+2026-09-08 22:58:27.057 [main] INFO  pages.party.ContactUsPage - Checking if email error element is displayed
+2026-09-08 22:58:27.078 [main] INFO  pages.party.ContactUsPage - Fetching email error message text
+2026-09-08 22:58:27.097 [main] INFO  testcases.party.ContactUsTest - Test testSendEmptyEmail completed successfully
+2026-09-08 22:58:27.604 [main] INFO  testcases.party.ContactUsTest - Starting test: testWrongFormatEmail
+2026-09-08 22:58:27.605 [main] INFO  pages.party.ContactUsPage - Initializing ContactUsPage
+2026-09-08 22:58:27.605 [main] INFO  pages.party.ContactUsPage - Navigating and scrolling to Contact Us Form
+2026-09-08 22:58:27.612 [main] WARN  testcases.party.ContactUsTest - Executing negative test scenario: Sending wrong format email
+2026-09-08 22:58:27.613 [main] INFO  pages.party.ContactUsPage - Filling out Contact Us form for user: Juanito Alcachofa
+2026-09-08 22:58:28.087 [main] INFO  pages.party.ContactUsPage - Submitting Contact Us form via JavaScript click
+2026-09-08 22:58:29.100 [main] ERROR pages.party.ContactUsPage - Script timeout occurred while attempting to submit Contact Us form
+org.openqa.selenium.ScriptTimeoutException: Timed out after 1000 ms
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '26.6.2', java.version: '25.0.4'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [71e1909e-f06d-478b-8190-09a9970e870b, executeAsyncScript {args=[], script=document.querySelector('[data-aid="CONTACT_SUBMIT_BUTTON_REND"]').click();}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 155.0.1, moz:accessibilityChecks: false, moz:buildID: 20260903215306, moz:geckodriverVersion: 0.37.1, moz:headless: false, moz:platformVersion: 25.6.0, moz:processID: 2916, moz:profile: /var/folders/c8/wv0l5_ln5zx..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
+Session ID: 71e1909e-f06d-478b-8190-09a9970e870b
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:143) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:196) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:217) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.executeAsyncScript(RemoteWebDriver.java:513) ~[selenium-remote-driver-4.45.0.jar:?]
+	at pages.party.ContactUsPage.fillInformationContactUs(ContactUsPage.java:116) [test-classes/:?]
+	at testcases.party.ContactUsTest.testWrongFormatEmail(ContactUsTest.java:43) [test-classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[?:?]
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134) [testng-7.12.0.jar:7.12.0]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:744) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestRunner.run(TestRunner.java:616) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.runSuites(TestNG.java:1112) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.run(TestNG.java:1079) [testng-7.12.0.jar:7.12.0]
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308) [surefire-testng-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71) [surefire-testng-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113) [surefire-testng-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385) [surefire-booter-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162) [surefire-booter-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507) [surefire-booter-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495) [surefire-booter-3.5.0.jar:3.5.0]
+2026-09-08 22:58:29.102 [main] INFO  testcases.party.ContactUsTest - Verifying error element is displayed for wrong email format
+2026-09-08 22:58:29.102 [main] INFO  pages.party.ContactUsPage - Checking if email error element is displayed
+2026-09-08 22:58:29.121 [main] INFO  pages.party.ContactUsPage - Fetching email error message text
+2026-09-08 22:58:29.138 [main] INFO  testcases.party.ContactUsTest - Test testWrongFormatEmail completed successfully
+2026-09-08 22:58:29.650 [main] INFO  testcases.party.ContactUsTest - Starting test: testSendCorrectInformation
+2026-09-08 22:58:29.650 [main] INFO  pages.party.ContactUsPage - Initializing ContactUsPage
+2026-09-08 22:58:29.651 [main] INFO  pages.party.ContactUsPage - Navigating and scrolling to Contact Us Form
+2026-09-08 22:58:29.662 [main] INFO  pages.party.ContactUsPage - Filling out Contact Us form for user: Juanito Alcachofa
+2026-09-08 22:58:30.283 [main] INFO  pages.party.ContactUsPage - Submitting Contact Us form via JavaScript click
+2026-09-08 22:58:31.347 [main] ERROR pages.party.ContactUsPage - Script timeout occurred while attempting to submit Contact Us form
+org.openqa.selenium.ScriptTimeoutException: Timed out after 1000 ms
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '26.6.2', java.version: '25.0.4'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [71e1909e-f06d-478b-8190-09a9970e870b, executeAsyncScript {args=[], script=document.querySelector('[data-aid="CONTACT_SUBMIT_BUTTON_REND"]').click();}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 155.0.1, moz:accessibilityChecks: false, moz:buildID: 20260903215306, moz:geckodriverVersion: 0.37.1, moz:headless: false, moz:platformVersion: 25.6.0, moz:processID: 2916, moz:profile: /var/folders/c8/wv0l5_ln5zx..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
+Session ID: 71e1909e-f06d-478b-8190-09a9970e870b
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:143) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:196) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:217) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.executeAsyncScript(RemoteWebDriver.java:513) ~[selenium-remote-driver-4.45.0.jar:?]
+	at pages.party.ContactUsPage.fillInformationContactUs(ContactUsPage.java:116) [test-classes/:?]
+	at testcases.party.ContactUsTest.testSendCorrectInformation(ContactUsTest.java:62) [test-classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[?:?]
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134) [testng-7.12.0.jar:7.12.0]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:744) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestRunner.run(TestRunner.java:616) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.runSuites(TestNG.java:1112) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.run(TestNG.java:1079) [testng-7.12.0.jar:7.12.0]
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308) [surefire-testng-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71) [surefire-testng-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113) [surefire-testng-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385) [surefire-booter-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162) [surefire-booter-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507) [surefire-booter-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495) [surefire-booter-3.5.0.jar:3.5.0]
+2026-09-08 22:58:31.349 [main] INFO  testcases.party.ContactUsTest - Verifying successful submission message is displayed
+2026-09-08 22:58:31.349 [main] INFO  pages.party.ContactUsPage - Verifying if submission success element is displayed
+2026-09-08 22:58:31.877 [main] INFO  pages.party.ContactUsPage - Retrieving submission success message text
+2026-09-08 22:58:31.901 [main] INFO  testcases.party.ContactUsTest - Test testSendCorrectInformation completed successfully
+2026-09-08 22:58:32.412 [main] INFO  testcases.party.CreateAccountTest - Starting test: testCreateAccountWithoutPhone
+2026-09-08 22:58:32.416 [main] INFO  pages.party.CreateAccountPage - Initializing CreateAccountPage
+2026-09-08 22:58:32.416 [main] INFO  pages.party.CreateAccountPage - Navigating to Create Account section
+2026-09-08 22:58:33.206 [main] INFO  pages.party.CreateAccountPage - Submitting Create Account form with parameters -> FirstName: 'Juanito', LastName: 'Alcachofa', Email: 'alcachofas@comida.com', Phone: 'null'
+2026-09-08 22:58:33.693 [main] WARN  pages.party.CreateAccountPage - Phone parameter is null. Leaving field blank.
+2026-09-08 22:58:33.693 [main] INFO  pages.party.CreateAccountPage - Clicking Create Account button
+2026-09-08 22:58:33.781 [main] INFO  testcases.party.CreateAccountTest - Asserting instruction header and description
+2026-09-08 22:58:33.781 [main] INFO  pages.party.CreateAccountPage - Verifying instruction header display
+2026-09-08 22:58:34.313 [main] INFO  pages.party.CreateAccountPage - Checking instruction description display
+2026-09-08 22:58:34.320 [main] INFO  pages.party.CreateAccountPage - Retrieving instruction header text
+2026-09-08 22:58:34.333 [main] INFO  pages.party.CreateAccountPage - Retrieving instruction description text
+2026-09-08 22:58:34.850 [main] INFO  testcases.party.CreateAccountTest - Starting test: testEmptyEmail
+2026-09-08 22:58:34.851 [main] INFO  pages.party.CreateAccountPage - Initializing CreateAccountPage
+2026-09-08 22:58:34.851 [main] INFO  pages.party.CreateAccountPage - Navigating to Create Account section
+2026-09-08 22:58:35.284 [main] WARN  testcases.party.CreateAccountTest - Triggering validation: Passing null for email via POJO
+2026-09-08 22:58:35.284 [main] INFO  pages.party.CreateAccountPage - Submitting Create Account form with parameters -> FirstName: 'Juanito', LastName: 'Alcachofa', Email: 'null', Phone: 'null'
+2026-09-08 22:58:35.537 [main] WARN  pages.party.CreateAccountPage - Email parameter is null. Leaving field blank.
+2026-09-08 22:58:35.537 [main] WARN  pages.party.CreateAccountPage - Phone parameter is null. Leaving field blank.
+2026-09-08 22:58:35.537 [main] INFO  pages.party.CreateAccountPage - Clicking Create Account button
+2026-09-08 22:58:35.624 [main] INFO  testcases.party.CreateAccountTest - Asserting email error message
+2026-09-08 22:58:35.625 [main] INFO  pages.party.CreateAccountPage - Checking Email error message visibility
+2026-09-08 22:58:35.641 [main] INFO  pages.party.CreateAccountPage - Fetching Email error message text
+2026-09-08 22:58:36.157 [main] INFO  testcases.party.CreateAccountTest - Starting test: testEmptyFirstName
+2026-09-08 22:58:36.158 [main] INFO  pages.party.CreateAccountPage - Initializing CreateAccountPage
+2026-09-08 22:58:36.158 [main] INFO  pages.party.CreateAccountPage - Navigating to Create Account section
+2026-09-08 22:58:36.584 [main] WARN  testcases.party.CreateAccountTest - Triggering validation: Passing null for first name via POJO
+2026-09-08 22:58:36.584 [main] INFO  pages.party.CreateAccountPage - Submitting Create Account form with parameters -> FirstName: 'null', LastName: 'Alcachofa', Email: 'alcachofas@comida.com', Phone: 'null'
+2026-09-08 22:58:36.614 [main] WARN  pages.party.CreateAccountPage - First Name parameter is null. Leaving field blank.
+2026-09-08 22:58:37.018 [main] WARN  pages.party.CreateAccountPage - Phone parameter is null. Leaving field blank.
+2026-09-08 22:58:37.019 [main] INFO  pages.party.CreateAccountPage - Clicking Create Account button
+2026-09-08 22:58:37.100 [main] INFO  testcases.party.CreateAccountTest - Asserting first name error message
+2026-09-08 22:58:37.100 [main] INFO  pages.party.CreateAccountPage - Checking First Name error message visibility
+2026-09-08 22:58:37.132 [main] INFO  pages.party.CreateAccountPage - Fetching First Name error message text
+2026-09-08 22:58:37.810 [main] INFO  testcases.common.BaseTest - The screenshot saved with the name testEmptyFirstName_2026.09.08.22.58.37.png
+2026-09-08 22:58:37.811 [main] INFO  testcases.party.CreateAccountTest - Starting test: testEmptyLastName
+2026-09-08 22:58:37.812 [main] INFO  pages.party.CreateAccountPage - Initializing CreateAccountPage
+2026-09-08 22:58:37.812 [main] INFO  pages.party.CreateAccountPage - Navigating to Create Account section
+2026-09-08 22:58:38.234 [main] WARN  testcases.party.CreateAccountTest - Triggering validation: Passing null for last name via POJO
+2026-09-08 22:58:38.234 [main] INFO  pages.party.CreateAccountPage - Submitting Create Account form with parameters -> FirstName: 'Juanito', LastName: 'null', Email: 'alcachofas@comida.com', Phone: 'null'
+2026-09-08 22:58:38.373 [main] WARN  pages.party.CreateAccountPage - Last Name parameter is null. Leaving field blank.
+2026-09-08 22:58:38.623 [main] WARN  pages.party.CreateAccountPage - Phone parameter is null. Leaving field blank.
+2026-09-08 22:58:38.624 [main] INFO  pages.party.CreateAccountPage - Clicking Create Account button
+2026-09-08 22:58:38.722 [main] INFO  testcases.party.CreateAccountTest - Asserting last name error message
+2026-09-08 22:58:38.722 [main] INFO  pages.party.CreateAccountPage - Checking Last Name error message visibility
+2026-09-08 22:58:38.730 [main] INFO  pages.party.CreateAccountPage - Fetching Last Name error message text
+2026-09-08 22:58:39.249 [main] INFO  testcases.party.CreateAccountTest - Starting test: testIncorrectEmail
+2026-09-08 22:58:39.250 [main] INFO  pages.party.CreateAccountPage - Initializing CreateAccountPage
+2026-09-08 22:58:39.250 [main] INFO  pages.party.CreateAccountPage - Navigating to Create Account section
+2026-09-08 22:58:39.671 [main] INFO  pages.party.CreateAccountPage - Submitting Create Account form with parameters -> FirstName: 'Juanito', LastName: 'Alcachofa', Email: 'Alcachofas y más S.A. de C.V.', Phone: 'null'
+2026-09-08 22:58:40.242 [main] WARN  pages.party.CreateAccountPage - Phone parameter is null. Leaving field blank.
+2026-09-08 22:58:40.242 [main] INFO  pages.party.CreateAccountPage - Clicking Create Account button
+2026-09-08 22:58:40.322 [main] INFO  pages.party.CreateAccountPage - Checking Email error message visibility
+2026-09-08 22:58:40.329 [main] INFO  pages.party.CreateAccountPage - Fetching Email error message text
+2026-09-08 22:58:40.841 [main] INFO  testcases.party.SignInTest - Starting test: testEmptyEmail
+2026-09-08 22:58:40.843 [main] INFO  pages.party.SignInPage - Initializing SignInPage
+2026-09-08 22:58:40.843 [main] INFO  pages.party.SignInPage - Navigating to Sign In page
+2026-09-08 22:58:41.413 [main] WARN  testcases.party.SignInTest - Testing empty email validation
+2026-09-08 22:58:41.413 [main] INFO  pages.party.SignInPage - Attempting login with email: 'null'
+2026-09-08 22:58:41.468 [main] WARN  pages.party.SignInPage - Email parameter passed is null
+2026-09-08 22:58:41.604 [main] INFO  pages.party.SignInPage - Clicking Sign In submit button
+2026-09-08 22:58:41.699 [main] INFO  pages.party.SignInPage - Checking if Sign In error message is displayed
+2026-09-08 22:58:41.706 [main] INFO  pages.party.SignInPage - Retrieving Sign In error message text
+2026-09-08 22:58:42.224 [main] INFO  testcases.party.SignInTest - Starting test: testEmptyPassword
+2026-09-08 22:58:42.225 [main] INFO  pages.party.SignInPage - Initializing SignInPage
+2026-09-08 22:58:42.225 [main] INFO  pages.party.SignInPage - Navigating to Sign In page
+2026-09-08 22:58:42.764 [main] WARN  testcases.party.SignInTest - Testing empty password validation
+2026-09-08 22:58:42.764 [main] INFO  pages.party.SignInPage - Attempting login with email: 'r15mez888@gmail.com'
+2026-09-08 22:58:42.960 [main] WARN  pages.party.SignInPage - Password parameter passed is null
+2026-09-08 22:58:42.960 [main] INFO  pages.party.SignInPage - Clicking Sign In submit button
+2026-09-08 22:58:43.048 [main] INFO  pages.party.SignInPage - Checking if Sign In error message is displayed
+2026-09-08 22:58:43.056 [main] INFO  pages.party.SignInPage - Retrieving Sign In error message text
+2026-09-08 22:58:43.572 [main] INFO  testcases.party.SignInTest - Starting test: testIncorrectCredentials
+2026-09-08 22:58:43.573 [main] INFO  pages.party.SignInPage - Initializing SignInPage
+2026-09-08 22:58:43.573 [main] INFO  pages.party.SignInPage - Navigating to Sign In page
+2026-09-08 22:58:44.072 [main] INFO  pages.party.SignInPage - Attempting login with email: 'lecuhas@trenes.com'
+2026-09-08 22:58:44.379 [main] INFO  pages.party.SignInPage - Clicking Sign In submit button
+2026-09-08 22:58:44.947 [main] INFO  testcases.party.SignInTest - Asserting invalid credentials error message
+2026-09-08 22:58:44.948 [main] INFO  pages.party.SignInPage - Checking if Sign In error message is displayed
+2026-09-08 22:58:44.968 [main] INFO  pages.party.SignInPage - Retrieving Sign In error message text
+2026-09-08 22:58:45.481 [main] INFO  testcases.party.SignInTest - Starting test: testIncorrectEmail
+2026-09-08 22:58:45.482 [main] INFO  pages.party.SignInPage - Initializing SignInPage
+2026-09-08 22:58:45.482 [main] INFO  pages.party.SignInPage - Navigating to Sign In page
+2026-09-08 22:58:46.012 [main] INFO  pages.party.SignInPage - Attempting login with email: 'Alcachofas y más S.A. de C.V.'
+2026-09-08 22:58:46.436 [main] INFO  pages.party.SignInPage - Clicking Sign In submit button
+2026-09-08 22:58:46.517 [main] INFO  pages.party.SignInPage - Checking if Sign In error message is displayed
+2026-09-08 22:58:46.525 [main] INFO  pages.party.SignInPage - Retrieving Sign In error message text
+2026-09-08 22:58:47.042 [main] INFO  testcases.party.TwoFactorAuthenticationTest - Starting test: test2FA (Happy Path)
+2026-09-08 22:58:47.044 [main] INFO  pages.party.TwoFactorAuthenticationPage - Initializing TwoFactorAuthenticationPage
+2026-09-08 22:58:47.044 [main] INFO  pages.party.TwoFactorAuthenticationPage - Navigating to 2FA Page
+2026-09-08 22:58:48.048 [main] INFO  pages.party.TwoFactorAuthenticationPage - Requesting 2FA verification code for email: 'alcachofas@comida.com'
+2026-09-08 22:58:58.379 [main] ERROR testcases.party.TwoFactorAuthenticationTest - Unexpected error during 2FA test execution
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for frame to be available: By.xpath: //*[@id='iframe-06'], but... org.openqa.selenium.NoSuchElementException: Unable to locate element: //*[@id='iframe-06'].
+(tried for 10 seconds with 500 milliseconds interval)
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '26.6.2', java.version: '25.0.4'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 155.0.1, moz:accessibilityChecks: false, moz:buildID: 20260903215306, moz:geckodriverVersion: 0.37.1, moz:headless: false, moz:platformVersion: 25.6.0, moz:processID: 2916, moz:profile: /var/folders/c8/wv0l5_ln5zx..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
+Session ID: 71e1909e-f06d-478b-8190-09a9970e870b
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85) ~[selenium-support-4.45.0.jar:?]
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234) ~[selenium-support-4.45.0.jar:?]
+	at pages.party.TwoFactorAuthenticationPage.sendCode(TwoFactorAuthenticationPage.java:81) ~[test-classes/:?]
+	at testcases.party.TwoFactorAuthenticationTest.test2FA(TwoFactorAuthenticationTest.java:70) [test-classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[?:?]
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134) [testng-7.12.0.jar:7.12.0]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:744) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestRunner.run(TestRunner.java:616) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.runSuites(TestNG.java:1112) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.run(TestNG.java:1079) [testng-7.12.0.jar:7.12.0]
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308) [surefire-testng-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71) [surefire-testng-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113) [surefire-testng-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385) [surefire-booter-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162) [surefire-booter-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507) [surefire-booter-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495) [surefire-booter-3.5.0.jar:3.5.0]
+2026-09-08 22:58:59.055 [main] INFO  testcases.common.BaseTest - The screenshot saved with the name test2FA_2026.09.08.22.58.59.png
+2026-09-08 22:58:59.056 [main] INFO  testcases.party.TwoFactorAuthenticationTest - Starting test: testEmptyCode (2FA)
+2026-09-08 22:58:59.056 [main] INFO  pages.party.TwoFactorAuthenticationPage - Initializing TwoFactorAuthenticationPage
+2026-09-08 22:58:59.056 [main] INFO  pages.party.TwoFactorAuthenticationPage - Navigating to 2FA Page
+2026-09-08 22:59:10.003 [main] INFO  testcases.common.BaseTest - The screenshot saved with the name testEmptyCode_2026.09.08.22.59.10.png
+2026-09-08 22:59:10.004 [main] INFO  testcases.party.TwoFactorAuthenticationTest - Starting test: testEmptyEmail (2FA)
+2026-09-08 22:59:10.004 [main] INFO  pages.party.TwoFactorAuthenticationPage - Initializing TwoFactorAuthenticationPage
+2026-09-08 22:59:10.004 [main] INFO  pages.party.TwoFactorAuthenticationPage - Navigating to 2FA Page
+2026-09-08 22:59:20.884 [main] INFO  testcases.common.BaseTest - The screenshot saved with the name testEmptyEmail_2026.09.08.22.59.20.png
+2026-09-08 22:59:20.885 [main] INFO  testcases.party.TwoFactorAuthenticationTest - Starting test: testIncorrectCode (2FA)
+2026-09-08 22:59:20.885 [main] INFO  pages.party.TwoFactorAuthenticationPage - Initializing TwoFactorAuthenticationPage
+2026-09-08 22:59:20.885 [main] INFO  pages.party.TwoFactorAuthenticationPage - Navigating to 2FA Page
+2026-09-08 22:59:31.733 [main] INFO  testcases.common.BaseTest - The screenshot saved with the name testIncorrectCode_2026.09.08.22.59.31.png
+2026-09-08 22:59:31.734 [main] INFO  testcases.party.TwoFactorAuthenticationTest - Starting test: testIncorrectEmail (2FA)
+2026-09-08 22:59:31.734 [main] INFO  pages.party.TwoFactorAuthenticationPage - Initializing TwoFactorAuthenticationPage
+2026-09-08 22:59:31.735 [main] INFO  pages.party.TwoFactorAuthenticationPage - Navigating to 2FA Page
+2026-09-08 22:59:42.588 [main] INFO  testcases.common.BaseTest - The screenshot saved with the name testIncorrectEmail_2026.09.08.22.59.42.png
+2026-09-08 22:59:42.589 [main] INFO  testcases.party.HalloweenPartyTest - Starting test: testAttendZombieton
+2026-09-08 22:59:42.590 [main] INFO  pages.party.HalloweenPartyPage - Initializing HalloweenPartyPage
+2026-09-08 22:59:42.590 [main] INFO  pages.party.HalloweenPartyPage - Navigating to Halloween Party Page
+2026-09-08 22:59:43.587 [main] INFO  pages.party.HalloweenPartyPage - Clicking party button with action text: 'I Am Attending A Party'
+2026-09-08 22:59:44.006 [main] INFO  pages.party.HalloweenPartyPage - Clicking party button with action text: 'Zombieton'
+2026-09-08 22:59:44.428 [main] INFO  pages.party.HalloweenPartyPage - Attempting to switch to guest iframe: '//*[@id='iframe-06']'
+2026-09-08 22:59:44.433 [main] INFO  pages.party.HalloweenPartyPage - Checking guest span element display status after switching to parent frame
+2026-09-08 22:59:44.952 [main] INFO  pages.party.HalloweenPartyPage - Fetching guest span text
+2026-09-08 22:59:44.966 [main] INFO  pages.party.HalloweenPartyPage - Switching to 'iframe-06' to check guest number element display
+2026-09-08 22:59:44.986 [main] INFO  pages.party.HalloweenPartyPage - Retrieving guest number text
+2026-09-08 22:59:44.999 [main] INFO  pages.party.HalloweenPartyPage - Verifying dropdown options in Halloween Party Page
+2026-09-08 22:59:45.688 [main] INFO  testcases.party.HalloweenPartyTest - Starting test: testHostZombieParty
+2026-09-08 22:59:45.689 [main] INFO  pages.party.HalloweenPartyPage - Initializing HalloweenPartyPage
+2026-09-08 22:59:45.689 [main] INFO  pages.party.HalloweenPartyPage - Navigating to Halloween Party Page
+2026-09-08 22:59:46.375 [main] INFO  pages.party.HalloweenPartyPage - Clicking party button with action text: 'I Am Hosting A Party'
+2026-09-08 22:59:46.773 [main] INFO  pages.party.HalloweenPartyPage - Clicking party button with action text: 'Zombies'
+2026-09-08 22:59:47.127 [main] INFO  pages.party.HalloweenPartyPage - Attempting to switch to guest iframe: '//*[@id='iframe-06']'
+2026-09-08 22:59:47.132 [main] INFO  testcases.party.HalloweenPartyTest - Asserting guest texts and dropdown
+2026-09-08 22:59:47.132 [main] INFO  pages.party.HalloweenPartyPage - Checking guest span element display status after switching to parent frame
+2026-09-08 22:59:47.656 [main] INFO  pages.party.HalloweenPartyPage - Fetching guest span text
+2026-09-08 22:59:47.668 [main] INFO  pages.party.HalloweenPartyPage - Switching to 'iframe-06' to check guest number element display
+2026-09-08 22:59:47.685 [main] INFO  pages.party.HalloweenPartyPage - Retrieving guest number text
+2026-09-08 22:59:47.715 [main] INFO  pages.party.HalloweenPartyPage - Verifying dropdown options in Halloween Party Page
+2026-09-08 23:01:58.530 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using geckodriver 0.37.1 (resolved driver for Firefox 155)
+2026-09-08 23:01:58.594 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as /Users/yukinora/.cache/selenium/geckodriver/mac64/0.37.1/geckodriver
+2026-09-08 23:02:03.720 [main] INFO  testcases.party.PopUpTest - Starting test: testPopUpClose
+2026-09-08 23:02:03.734 [main] INFO  pages.party.PopUpPage - Initializing PopUpPage and waiting for popup element presence
+2026-09-08 23:02:03.767 [main] INFO  pages.party.PopUpPage - PopUp element located successfully
+2026-09-08 23:02:03.767 [main] INFO  pages.party.PopUpPage - Clicking popup close button
+2026-09-08 23:02:03.880 [main] INFO  testcases.party.PopUpTest - Asserting that popup is no longer present
+2026-09-08 23:02:03.881 [main] INFO  pages.party.PopUpPage - Verifying if popup element is currently displayed
+2026-09-08 23:02:04.442 [main] INFO  testcases.party.ContactUsTest - Starting test: testSendEmptyEmail
+2026-09-08 23:02:04.444 [main] INFO  pages.party.ContactUsPage - Initializing ContactUsPage
+2026-09-08 23:02:04.444 [main] INFO  pages.party.ContactUsPage - Navigating and scrolling to Contact Us Form
+2026-09-08 23:02:04.459 [main] WARN  testcases.party.ContactUsTest - Executing negative test scenario: Sending empty email
+2026-09-08 23:02:04.460 [main] INFO  pages.party.ContactUsPage - Filling out Contact Us form for user: test test
+2026-09-08 23:02:04.746 [main] INFO  pages.party.ContactUsPage - Submitting Contact Us form via JavaScript click
+2026-09-08 23:02:05.760 [main] ERROR pages.party.ContactUsPage - Script timeout occurred while attempting to submit Contact Us form
+org.openqa.selenium.ScriptTimeoutException: Timed out after 1000 ms
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '26.6.2', java.version: '25.0.4'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [e68c2110-dc42-48e2-ba85-33fbdf499163, executeAsyncScript {args=[], script=document.querySelector('[data-aid="CONTACT_SUBMIT_BUTTON_REND"]').click();}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 155.0.1, moz:accessibilityChecks: false, moz:buildID: 20260903215306, moz:geckodriverVersion: 0.37.1, moz:headless: false, moz:platformVersion: 25.6.0, moz:processID: 3190, moz:profile: /var/folders/c8/wv0l5_ln5zx..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
+Session ID: e68c2110-dc42-48e2-ba85-33fbdf499163
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:143) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:196) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:217) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.executeAsyncScript(RemoteWebDriver.java:513) ~[selenium-remote-driver-4.45.0.jar:?]
+	at pages.party.ContactUsPage.fillInformationContactUs(ContactUsPage.java:116) [test-classes/:?]
+	at testcases.party.ContactUsTest.testSendEmptyEmail(ContactUsTest.java:24) [test-classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[?:?]
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134) [testng-7.12.0.jar:7.12.0]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:744) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestRunner.run(TestRunner.java:616) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.runSuites(TestNG.java:1112) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.run(TestNG.java:1079) [testng-7.12.0.jar:7.12.0]
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308) [surefire-testng-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71) [surefire-testng-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113) [surefire-testng-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385) [surefire-booter-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162) [surefire-booter-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507) [surefire-booter-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495) [surefire-booter-3.5.0.jar:3.5.0]
+2026-09-08 23:02:05.768 [main] INFO  testcases.party.ContactUsTest - Verifying error element is displayed for empty email
+2026-09-08 23:02:05.768 [main] INFO  pages.party.ContactUsPage - Checking if email error element is displayed
+2026-09-08 23:02:05.789 [main] INFO  pages.party.ContactUsPage - Fetching email error message text
+2026-09-08 23:02:05.808 [main] INFO  testcases.party.ContactUsTest - Test testSendEmptyEmail completed successfully
+2026-09-08 23:02:06.318 [main] INFO  testcases.party.ContactUsTest - Starting test: testWrongFormatEmail
+2026-09-08 23:02:06.319 [main] INFO  pages.party.ContactUsPage - Initializing ContactUsPage
+2026-09-08 23:02:06.319 [main] INFO  pages.party.ContactUsPage - Navigating and scrolling to Contact Us Form
+2026-09-08 23:02:06.328 [main] WARN  testcases.party.ContactUsTest - Executing negative test scenario: Sending wrong format email
+2026-09-08 23:02:06.328 [main] INFO  pages.party.ContactUsPage - Filling out Contact Us form for user: Juanito Alcachofa
+2026-09-08 23:02:06.775 [main] INFO  pages.party.ContactUsPage - Submitting Contact Us form via JavaScript click
+2026-09-08 23:02:07.807 [main] ERROR pages.party.ContactUsPage - Script timeout occurred while attempting to submit Contact Us form
+org.openqa.selenium.ScriptTimeoutException: Timed out after 1000 ms
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '26.6.2', java.version: '25.0.4'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [e68c2110-dc42-48e2-ba85-33fbdf499163, executeAsyncScript {args=[], script=document.querySelector('[data-aid="CONTACT_SUBMIT_BUTTON_REND"]').click();}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 155.0.1, moz:accessibilityChecks: false, moz:buildID: 20260903215306, moz:geckodriverVersion: 0.37.1, moz:headless: false, moz:platformVersion: 25.6.0, moz:processID: 3190, moz:profile: /var/folders/c8/wv0l5_ln5zx..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
+Session ID: e68c2110-dc42-48e2-ba85-33fbdf499163
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:143) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:196) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:217) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.executeAsyncScript(RemoteWebDriver.java:513) ~[selenium-remote-driver-4.45.0.jar:?]
+	at pages.party.ContactUsPage.fillInformationContactUs(ContactUsPage.java:116) [test-classes/:?]
+	at testcases.party.ContactUsTest.testWrongFormatEmail(ContactUsTest.java:43) [test-classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[?:?]
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134) [testng-7.12.0.jar:7.12.0]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:744) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestRunner.run(TestRunner.java:616) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.runSuites(TestNG.java:1112) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.run(TestNG.java:1079) [testng-7.12.0.jar:7.12.0]
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308) [surefire-testng-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71) [surefire-testng-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113) [surefire-testng-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385) [surefire-booter-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162) [surefire-booter-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507) [surefire-booter-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495) [surefire-booter-3.5.0.jar:3.5.0]
+2026-09-08 23:02:07.809 [main] INFO  testcases.party.ContactUsTest - Verifying error element is displayed for wrong email format
+2026-09-08 23:02:07.809 [main] INFO  pages.party.ContactUsPage - Checking if email error element is displayed
+2026-09-08 23:02:07.829 [main] INFO  pages.party.ContactUsPage - Fetching email error message text
+2026-09-08 23:02:07.846 [main] INFO  testcases.party.ContactUsTest - Test testWrongFormatEmail completed successfully
+2026-09-08 23:02:08.356 [main] INFO  testcases.party.ContactUsTest - Starting test: testSendCorrectInformation
+2026-09-08 23:02:08.357 [main] INFO  pages.party.ContactUsPage - Initializing ContactUsPage
+2026-09-08 23:02:08.357 [main] INFO  pages.party.ContactUsPage - Navigating and scrolling to Contact Us Form
+2026-09-08 23:02:08.370 [main] INFO  pages.party.ContactUsPage - Filling out Contact Us form for user: Juanito Alcachofa
+2026-09-08 23:02:09.094 [main] INFO  pages.party.ContactUsPage - Submitting Contact Us form via JavaScript click
+2026-09-08 23:02:10.099 [main] ERROR pages.party.ContactUsPage - Script timeout occurred while attempting to submit Contact Us form
+org.openqa.selenium.ScriptTimeoutException: Timed out after 1000 ms
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '26.6.2', java.version: '25.0.4'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [e68c2110-dc42-48e2-ba85-33fbdf499163, executeAsyncScript {args=[], script=document.querySelector('[data-aid="CONTACT_SUBMIT_BUTTON_REND"]').click();}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 155.0.1, moz:accessibilityChecks: false, moz:buildID: 20260903215306, moz:geckodriverVersion: 0.37.1, moz:headless: false, moz:platformVersion: 25.6.0, moz:processID: 3190, moz:profile: /var/folders/c8/wv0l5_ln5zx..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
+Session ID: e68c2110-dc42-48e2-ba85-33fbdf499163
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:143) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:196) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:217) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575) ~[selenium-remote-driver-4.45.0.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.executeAsyncScript(RemoteWebDriver.java:513) ~[selenium-remote-driver-4.45.0.jar:?]
+	at pages.party.ContactUsPage.fillInformationContactUs(ContactUsPage.java:116) [test-classes/:?]
+	at testcases.party.ContactUsTest.testSendCorrectInformation(ContactUsTest.java:62) [test-classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[?:?]
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154) [testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134) [testng-7.12.0.jar:7.12.0]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:744) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestRunner.run(TestRunner.java:616) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.runSuites(TestNG.java:1112) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.run(TestNG.java:1079) [testng-7.12.0.jar:7.12.0]
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308) [surefire-testng-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71) [surefire-testng-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113) [surefire-testng-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385) [surefire-booter-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162) [surefire-booter-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507) [surefire-booter-3.5.0.jar:3.5.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495) [surefire-booter-3.5.0.jar:3.5.0]
+2026-09-08 23:02:10.101 [main] INFO  testcases.party.ContactUsTest - Verifying successful submission message is displayed
+2026-09-08 23:02:10.101 [main] INFO  pages.party.ContactUsPage - Verifying if submission success element is displayed
+2026-09-08 23:02:11.653 [main] INFO  pages.party.ContactUsPage - Retrieving submission success message text
+2026-09-08 23:02:12.195 [main] INFO  testcases.party.ContactUsTest - Test testSendCorrectInformation completed successfully
+2026-09-08 23:02:12.706 [main] INFO  testcases.party.CreateAccountTest - Starting test: testCreateAccountWithoutPhone
+2026-09-08 23:02:12.708 [main] INFO  pages.party.CreateAccountPage - Initializing CreateAccountPage
+2026-09-08 23:02:12.709 [main] INFO  pages.party.CreateAccountPage - Navigating to Create Account section
+2026-09-08 23:02:13.453 [main] INFO  pages.party.CreateAccountPage - Submitting Create Account form with parameters -> FirstName: 'Juanito', LastName: 'Alcachofa', Email: 'alcachofas@comida.com', Phone: 'null'
+2026-09-08 23:02:13.920 [main] WARN  pages.party.CreateAccountPage - Phone parameter is null. Leaving field blank.
+2026-09-08 23:02:13.921 [main] INFO  pages.party.CreateAccountPage - Clicking Create Account button
+2026-09-08 23:02:14.018 [main] INFO  testcases.party.CreateAccountTest - Asserting instruction header and description
+2026-09-08 23:02:14.018 [main] INFO  pages.party.CreateAccountPage - Verifying instruction header display
+2026-09-08 23:02:14.549 [main] INFO  pages.party.CreateAccountPage - Checking instruction description display
+2026-09-08 23:02:14.555 [main] INFO  pages.party.CreateAccountPage - Retrieving instruction header text
+2026-09-08 23:02:14.569 [main] INFO  pages.party.CreateAccountPage - Retrieving instruction description text
+2026-09-08 23:02:15.087 [main] INFO  testcases.party.CreateAccountTest - Starting test: testEmptyEmail
+2026-09-08 23:02:15.088 [main] INFO  pages.party.CreateAccountPage - Initializing CreateAccountPage
+2026-09-08 23:02:15.088 [main] INFO  pages.party.CreateAccountPage - Navigating to Create Account section
+2026-09-08 23:02:15.533 [main] WARN  testcases.party.CreateAccountTest - Triggering validation: Passing null for email via POJO
+2026-09-08 23:02:15.533 [main] INFO  pages.party.CreateAccountPage - Submitting Create Account form with parameters -> FirstName: 'Juanito', LastName: 'Alcachofa', Email: 'null', Phone: 'null'
+2026-09-08 23:02:15.900 [main] WARN  pages.party.CreateAccountPage - Email parameter is null. Leaving field blank.
+2026-09-08 23:02:15.900 [main] WARN  pages.party.CreateAccountPage - Phone parameter is null. Leaving field blank.
+2026-09-08 23:02:15.900 [main] INFO  pages.party.CreateAccountPage - Clicking Create Account button
+2026-09-08 23:02:15.984 [main] INFO  testcases.party.CreateAccountTest - Asserting email error message
+2026-09-08 23:02:15.984 [main] INFO  pages.party.CreateAccountPage - Checking Email error message visibility
+2026-09-08 23:02:15.994 [main] INFO  pages.party.CreateAccountPage - Fetching Email error message text
+2026-09-08 23:02:16.512 [main] INFO  testcases.party.CreateAccountTest - Starting test: testEmptyFirstName
+2026-09-08 23:02:16.513 [main] INFO  pages.party.CreateAccountPage - Initializing CreateAccountPage
+2026-09-08 23:02:16.514 [main] INFO  pages.party.CreateAccountPage - Navigating to Create Account section
+2026-09-08 23:02:16.944 [main] WARN  testcases.party.CreateAccountTest - Triggering validation: Passing null for first name via POJO
+2026-09-08 23:02:16.945 [main] INFO  pages.party.CreateAccountPage - Submitting Create Account form with parameters -> FirstName: 'null', LastName: 'Alcachofa', Email: 'alcachofas@comida.com', Phone: 'null'
+2026-09-08 23:02:16.975 [main] WARN  pages.party.CreateAccountPage - First Name parameter is null. Leaving field blank.
+2026-09-08 23:02:17.343 [main] WARN  pages.party.CreateAccountPage - Phone parameter is null. Leaving field blank.
+2026-09-08 23:02:17.343 [main] INFO  pages.party.CreateAccountPage - Clicking Create Account button
+2026-09-08 23:02:17.418 [main] INFO  testcases.party.CreateAccountTest - Asserting first name error message
+2026-09-08 23:02:17.418 [main] INFO  pages.party.CreateAccountPage - Checking First Name error message visibility
+2026-09-08 23:02:17.436 [main] INFO  pages.party.CreateAccountPage - Fetching First Name error message text
+2026-09-08 23:02:18.088 [main] INFO  testcases.common.BaseTest - The screenshot saved with the name testEmptyFirstName_2026.09.08.23.02.18.png
+2026-09-08 23:02:18.088 [main] INFO  testcases.party.CreateAccountTest - Starting test: testEmptyLastName
+2026-09-08 23:02:18.089 [main] INFO  pages.party.CreateAccountPage - Initializing CreateAccountPage
+2026-09-08 23:02:18.089 [main] INFO  pages.party.CreateAccountPage - Navigating to Create Account section
+2026-09-08 23:02:18.502 [main] WARN  testcases.party.CreateAccountTest - Triggering validation: Passing null for last name via POJO
+2026-09-08 23:02:18.502 [main] INFO  pages.party.CreateAccountPage - Submitting Create Account form with parameters -> FirstName: 'Juanito', LastName: 'null', Email: 'alcachofas@comida.com', Phone: 'null'
+2026-09-08 23:02:18.634 [main] WARN  pages.party.CreateAccountPage - Last Name parameter is null. Leaving field blank.
+2026-09-08 23:02:18.887 [main] WARN  pages.party.CreateAccountPage - Phone parameter is null. Leaving field blank.
+2026-09-08 23:02:18.887 [main] INFO  pages.party.CreateAccountPage - Clicking Create Account button
+2026-09-08 23:02:18.958 [main] INFO  testcases.party.CreateAccountTest - Asserting last name error message
+2026-09-08 23:02:18.958 [main] INFO  pages.party.CreateAccountPage - Checking Last Name error message visibility
+2026-09-08 23:02:18.979 [main] INFO  pages.party.CreateAccountPage - Fetching Last Name error message text
+2026-09-08 23:02:19.498 [main] INFO  testcases.party.CreateAccountTest - Starting test: testIncorrectEmail
+2026-09-08 23:02:19.499 [main] INFO  pages.party.CreateAccountPage - Initializing CreateAccountPage
+2026-09-08 23:02:19.499 [main] INFO  pages.party.CreateAccountPage - Navigating to Create Account section
+2026-09-08 23:02:19.912 [main] INFO  pages.party.CreateAccountPage - Submitting Create Account form with parameters -> FirstName: 'Juanito', LastName: 'Alcachofa', Email: 'Alcachofas y más S.A. de C.V.', Phone: 'null'
+2026-09-08 23:02:20.537 [main] WARN  pages.party.CreateAccountPage - Phone parameter is null. Leaving field blank.
+2026-09-08 23:02:20.537 [main] INFO  pages.party.CreateAccountPage - Clicking Create Account button
+2026-09-08 23:02:20.655 [main] INFO  pages.party.CreateAccountPage - Checking Email error message visibility
+2026-09-08 23:02:20.662 [main] INFO  pages.party.CreateAccountPage - Fetching Email error message text
+2026-09-08 23:02:21.179 [main] INFO  testcases.party.SignInTest - Starting test: testEmptyEmail
+2026-09-08 23:02:21.181 [main] INFO  pages.party.SignInPage - Initializing SignInPage
+2026-09-08 23:02:21.181 [main] INFO  pages.party.SignInPage - Navigating to Sign In page
+2026-09-08 23:02:21.821 [main] WARN  testcases.party.SignInTest - Testing empty email validation
+2026-09-08 23:02:21.821 [main] INFO  pages.party.SignInPage - Attempting login with email: 'null'
+2026-09-08 23:02:21.844 [main] WARN  pages.party.SignInPage - Email parameter passed is null
+2026-09-08 23:02:21.976 [main] INFO  pages.party.SignInPage - Clicking Sign In submit button
+2026-09-08 23:02:22.064 [main] INFO  pages.party.SignInPage - Checking if Sign In error message is displayed
+2026-09-08 23:02:22.071 [main] INFO  pages.party.SignInPage - Retrieving Sign In error message text
+2026-09-08 23:02:22.587 [main] INFO  testcases.party.SignInTest - Starting test: testEmptyPassword
+2026-09-08 23:02:22.588 [main] INFO  pages.party.SignInPage - Initializing SignInPage
+2026-09-08 23:02:22.588 [main] INFO  pages.party.SignInPage - Navigating to Sign In page
+2026-09-08 23:02:23.080 [main] WARN  testcases.party.SignInTest - Testing empty password validation
+2026-09-08 23:02:23.080 [main] INFO  pages.party.SignInPage - Attempting login with email: 'r15mez888@gmail.com'
+2026-09-08 23:02:23.273 [main] WARN  pages.party.SignInPage - Password parameter passed is null
+2026-09-08 23:02:23.273 [main] INFO  pages.party.SignInPage - Clicking Sign In submit button
+2026-09-08 23:02:23.365 [main] INFO  pages.party.SignInPage - Checking if Sign In error message is displayed
+2026-09-08 23:02:23.371 [main] INFO  pages.party.SignInPage - Retrieving Sign In error message text
+2026-09-08 23:02:23.887 [main] INFO  testcases.party.SignInTest - Starting test: testIncorrectCredentials
+2026-09-08 23:02:23.887 [main] INFO  pages.party.SignInPage - Initializing SignInPage
+2026-09-08 23:02:23.887 [main] INFO  pages.party.SignInPage - Navigating to Sign In page
+2026-09-08 23:02:24.504 [main] INFO  pages.party.SignInPage - Attempting login with email: 'lecuhas@trenes.com'
+2026-09-08 23:02:24.790 [main] INFO  pages.party.SignInPage - Clicking Sign In submit button
+2026-09-08 23:02:25.431 [main] INFO  testcases.party.SignInTest - Asserting invalid credentials error message
+2026-09-08 23:02:25.432 [main] INFO  pages.party.SignInPage - Checking if Sign In error message is displayed
+2026-09-08 23:02:25.439 [main] INFO  pages.party.SignInPage - Retrieving Sign In error message text
+2026-09-08 23:02:25.958 [main] INFO  testcases.party.SignInTest - Starting test: testIncorrectEmail
+2026-09-08 23:02:25.959 [main] INFO  pages.party.SignInPage - Initializing SignInPage
+2026-09-08 23:02:25.959 [main] INFO  pages.party.SignInPage - Navigating to Sign In page
+2026-09-08 23:02:26.470 [main] INFO  pages.party.SignInPage - Attempting login with email: 'Alcachofas y más S.A. de C.V.'
+2026-09-08 23:02:26.864 [main] INFO  pages.party.SignInPage - Clicking Sign In submit button
+2026-09-08 23:02:26.947 [main] INFO  pages.party.SignInPage - Checking if Sign In error message is displayed
+2026-09-08 23:02:26.955 [main] INFO  pages.party.SignInPage - Retrieving Sign In error message text
+2026-09-08 23:02:27.469 [main] INFO  testcases.party.TwoFactorAuthenticationTest - Starting test: test2FA (Happy Path)
+2026-09-08 23:02:27.471 [main] INFO  pages.party.TwoFactorAuthenticationPage - Initializing TwoFactorAuthenticationPage
+2026-09-08 23:02:27.471 [main] INFO  pages.party.TwoFactorAuthenticationPage - Navigating to 2FA Page
+2026-09-08 23:02:28.287 [main] INFO  pages.party.TwoFactorAuthenticationPage - Requesting 2FA verification code for email: 'alcachofas@comida.com'
+2026-09-08 23:02:28.397 [main] INFO  pages.party.TwoFactorAuthenticationPage - Extracting generated 2FA verification code from message
+2026-09-08 23:02:28.410 [main] INFO  testcases.party.TwoFactorAuthenticationTest - Submitting extracted code for verification
+2026-09-08 23:02:28.410 [main] INFO  pages.party.TwoFactorAuthenticationPage - Submitting verification code: '503950'
+2026-09-08 23:02:28.523 [main] INFO  testcases.party.TwoFactorAuthenticationTest - Asserting verification success message
+2026-09-08 23:02:28.523 [main] INFO  pages.party.TwoFactorAuthenticationPage - Checking display status of 2FA email/code message
+2026-09-08 23:02:28.544 [main] INFO  pages.party.TwoFactorAuthenticationPage - Retrieving text content of 2FA message
+2026-09-08 23:02:29.166 [main] INFO  testcases.party.TwoFactorAuthenticationTest - Starting test: testEmptyCode (2FA)
+2026-09-08 23:02:29.166 [main] INFO  pages.party.TwoFactorAuthenticationPage - Initializing TwoFactorAuthenticationPage
+2026-09-08 23:02:29.166 [main] INFO  pages.party.TwoFactorAuthenticationPage - Navigating to 2FA Page
+2026-09-08 23:02:30.186 [main] INFO  pages.party.TwoFactorAuthenticationPage - Requesting 2FA verification code for email: 'alcachofas@comida.com'
+2026-09-08 23:02:30.295 [main] WARN  testcases.party.TwoFactorAuthenticationTest - Verifying with null code
+2026-09-08 23:02:30.295 [main] INFO  pages.party.TwoFactorAuthenticationPage - Submitting verification code: 'null'
+2026-09-08 23:02:30.306 [main] WARN  pages.party.TwoFactorAuthenticationPage - Code parameter passed to verifyCode is null
+2026-09-08 23:02:30.390 [main] INFO  pages.party.TwoFactorAuthenticationPage - Checking display status of 2FA email/code message
+2026-09-08 23:02:30.408 [main] INFO  pages.party.TwoFactorAuthenticationPage - Retrieving text content of 2FA message
+2026-09-08 23:02:30.938 [main] INFO  testcases.party.TwoFactorAuthenticationTest - Starting test: testEmptyEmail (2FA)
+2026-09-08 23:02:30.940 [main] INFO  pages.party.TwoFactorAuthenticationPage - Initializing TwoFactorAuthenticationPage
+2026-09-08 23:02:30.940 [main] INFO  pages.party.TwoFactorAuthenticationPage - Navigating to 2FA Page
+2026-09-08 23:02:31.712 [main] WARN  testcases.party.TwoFactorAuthenticationTest - Sending null email to trigger validation
+2026-09-08 23:02:31.712 [main] INFO  pages.party.TwoFactorAuthenticationPage - Requesting 2FA verification code for email: 'null'
+2026-09-08 23:02:31.737 [main] WARN  pages.party.TwoFactorAuthenticationPage - Email parameter passed to sendCode is null
+2026-09-08 23:02:31.828 [main] INFO  pages.party.TwoFactorAuthenticationPage - Checking display status of 2FA email/code message
+2026-09-08 23:02:31.845 [main] INFO  pages.party.TwoFactorAuthenticationPage - Retrieving text content of 2FA message
+2026-09-08 23:02:32.368 [main] INFO  testcases.party.TwoFactorAuthenticationTest - Starting test: testIncorrectCode (2FA)
+2026-09-08 23:02:32.369 [main] INFO  pages.party.TwoFactorAuthenticationPage - Initializing TwoFactorAuthenticationPage
+2026-09-08 23:02:32.369 [main] INFO  pages.party.TwoFactorAuthenticationPage - Navigating to 2FA Page
+2026-09-08 23:02:32.954 [main] INFO  pages.party.TwoFactorAuthenticationPage - Executing invalid code scenario flow
+2026-09-08 23:02:32.955 [main] INFO  pages.party.TwoFactorAuthenticationPage - Requesting 2FA verification code for email: 'alcachofas@comida.com'
+2026-09-08 23:02:33.120 [main] INFO  pages.party.TwoFactorAuthenticationPage - Extracting generated 2FA verification code from message
+2026-09-08 23:02:33.144 [main] INFO  pages.party.TwoFactorAuthenticationPage - Submitting verification code: '000000'
+2026-09-08 23:02:33.240 [main] INFO  pages.party.TwoFactorAuthenticationPage - Checking display status of 2FA email/code message
+2026-09-08 23:02:33.275 [main] INFO  pages.party.TwoFactorAuthenticationPage - Retrieving text content of 2FA message
+2026-09-08 23:02:33.796 [main] INFO  testcases.party.TwoFactorAuthenticationTest - Starting test: testIncorrectEmail (2FA)
+2026-09-08 23:02:33.796 [main] INFO  pages.party.TwoFactorAuthenticationPage - Initializing TwoFactorAuthenticationPage
+2026-09-08 23:02:33.797 [main] INFO  pages.party.TwoFactorAuthenticationPage - Navigating to 2FA Page
+2026-09-08 23:02:34.562 [main] INFO  pages.party.TwoFactorAuthenticationPage - Requesting 2FA verification code for email: 'Alcachofas y más S.A. de C.V.'
+2026-09-08 23:02:34.676 [main] INFO  pages.party.TwoFactorAuthenticationPage - Checking display status of 2FA email/code message
+2026-09-08 23:02:34.697 [main] INFO  pages.party.TwoFactorAuthenticationPage - Retrieving text content of 2FA message
+2026-09-08 23:02:35.229 [main] INFO  testcases.party.HalloweenPartyTest - Starting test: testAttendZombieton
+2026-09-08 23:02:35.232 [main] INFO  pages.party.HalloweenPartyPage - Initializing HalloweenPartyPage
+2026-09-08 23:02:35.232 [main] INFO  pages.party.HalloweenPartyPage - Navigating to Halloween Party Page
+2026-09-08 23:02:36.048 [main] INFO  pages.party.HalloweenPartyPage - Clicking party button with action text: 'I Am Attending A Party'
+2026-09-08 23:02:36.548 [main] INFO  pages.party.HalloweenPartyPage - Clicking party button with action text: 'Zombieton'
+2026-09-08 23:02:37.001 [main] INFO  pages.party.HalloweenPartyPage - Attempting to switch to guest iframe: '//*[@id='iframe-06']'
+2026-09-08 23:02:37.019 [main] INFO  pages.party.HalloweenPartyPage - Checking guest span element display status after switching to parent frame
+2026-09-08 23:02:37.040 [main] INFO  pages.party.HalloweenPartyPage - Fetching guest span text
+2026-09-08 23:02:37.053 [main] INFO  pages.party.HalloweenPartyPage - Switching to 'iframe-06' to check guest number element display
+2026-09-08 23:02:37.086 [main] INFO  pages.party.HalloweenPartyPage - Retrieving guest number text
+2026-09-08 23:02:37.108 [main] INFO  pages.party.HalloweenPartyPage - Verifying dropdown options in Halloween Party Page
+2026-09-08 23:02:37.789 [main] INFO  testcases.party.HalloweenPartyTest - Starting test: testHostZombieParty
+2026-09-08 23:02:37.790 [main] INFO  pages.party.HalloweenPartyPage - Initializing HalloweenPartyPage
+2026-09-08 23:02:37.790 [main] INFO  pages.party.HalloweenPartyPage - Navigating to Halloween Party Page
+2026-09-08 23:02:38.507 [main] INFO  pages.party.HalloweenPartyPage - Clicking party button with action text: 'I Am Hosting A Party'
+2026-09-08 23:02:38.930 [main] INFO  pages.party.HalloweenPartyPage - Clicking party button with action text: 'Zombies'
+2026-09-08 23:02:39.286 [main] INFO  pages.party.HalloweenPartyPage - Attempting to switch to guest iframe: '//*[@id='iframe-06']'
+2026-09-08 23:02:39.289 [main] INFO  testcases.party.HalloweenPartyTest - Asserting guest texts and dropdown
+2026-09-08 23:02:39.290 [main] INFO  pages.party.HalloweenPartyPage - Checking guest span element display status after switching to parent frame
+2026-09-08 23:02:39.318 [main] INFO  pages.party.HalloweenPartyPage - Fetching guest span text
+2026-09-08 23:02:39.332 [main] INFO  pages.party.HalloweenPartyPage - Switching to 'iframe-06' to check guest number element display
+2026-09-08 23:02:39.348 [main] INFO  pages.party.HalloweenPartyPage - Retrieving guest number text
+2026-09-08 23:02:39.360 [main] INFO  pages.party.HalloweenPartyPage - Verifying dropdown options in Halloween Party Page

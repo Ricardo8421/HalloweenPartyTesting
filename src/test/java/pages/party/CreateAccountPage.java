@@ -57,7 +57,7 @@ public class CreateAccountPage extends BasePage {
     public CreateAccountPage(WebDriver driver) {
         super(driver);
         log.info("Initializing CreateAccountPage");
-        navigateContactUsPage();
+        navigateCreateAccountPage();
     }
 
     public void sendCreateAccountFormWithValues(UserAccount userAccount) {
@@ -69,7 +69,7 @@ public class CreateAccountPage extends BasePage {
         );
     }
 
-    public void navigateContactUsPage() {
+    public void navigateCreateAccountPage() {
         log.info("Navigating to Create Account section");
         int waitSeconds = Integer.parseInt(ConfigReader.getProperty("implicit.wait"));
         log.debug("Setting explicit wait timeout to {} seconds", waitSeconds);

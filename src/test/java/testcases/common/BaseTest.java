@@ -1,5 +1,7 @@
 package testcases.common;
 
+import driver.DriverFactory;
+import driver.DriverManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import pages.party.config.ConfigReader;
@@ -24,7 +26,6 @@ import org.testng.ITestResult;
 import org.testng.annotations.*;
 
 public class BaseTest {
-    private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
     protected static final Logger log = LogManager.getLogger(BaseTest.class);
 
     @BeforeSuite (alwaysRun = true)
@@ -33,50 +34,25 @@ public class BaseTest {
         ConfigReader.initializeConfig();
 
         String browser = System.getProperty("browser", xmlBrowser).toLowerCase();
-        WebDriver localDriver;
 
-        switch (browser) {
-            case "chrome":
-                WebDriverManager.chromedriver().setup();
-                ChromeOptions chromeOptions = new ChromeOptions();
-                chromeOptions.addArguments("--incognito");
-                localDriver = new ChromeDriver(chromeOptions);
-                break;
+        WebDriver driver = DriverFactory.createInstance(browser);
 
-            case "edge":
-                WebDriverManager.edgedriver().setup();
-                EdgeOptions edgeOptions = new EdgeOptions();
-                edgeOptions.addArguments("-inprivate");
-                localDriver = new EdgeDriver(edgeOptions);
-                break;
+        driver.manage().window().maximize();
+        driver.get(ConfigReader.getProperty("base.url"));
 
-            case "firefox":
-            default:
-                WebDriverManager.firefoxdriver().setup();
-                FirefoxOptions firefoxOptions = new FirefoxOptions();
-                firefoxOptions.addArguments("-private");
-                localDriver = new FirefoxDriver(firefoxOptions);
-                break;
-        }
-
-        localDriver.manage().window().maximize();
-        localDriver.get(ConfigReader.getProperty("base.url"));
-        this.driver.set(localDriver);
+        DriverManager.setDriver(driver);
     }
 
     public static WebDriver getDriver() {
-        return driver.get();
+        return DriverManager.getDriver();
     }
 
     @AfterSuite (alwaysRun = true)
     public void tearDown() {
-        if (driver.get() != null) {
-            driver.get().quit();
-            driver.remove();
-        }
+        DriverManager.quitDriver();
     }
 
-    //TODO: Test failure for screenshot
+
     @AfterMethod(alwaysRun = true)
     public void checkFailure(ITestResult result) throws InterruptedException {
         // DEBUG
@@ -93,7 +69,7 @@ public class BaseTest {
             String screenshotFileName = testName + "_" + failureTimeString + ".png";
 
             try{
-                FileUtils.copyFile(imgFile, new File("test/reports/screenshots" + screenshotFileName));
+                FileUtils.copyFile(imgFile, new File("reports/screenshots" + screenshotFileName));
                 log.info("The screenshot saved with the name " + screenshotFileName);
             }catch(IOException ex){
                 log.error("An error has occurred while saving a screenshot:" + ex.getMessage());
